@@ -10,6 +10,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </head>
 
 <body>
@@ -28,10 +30,20 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md2"></div>
+            <div class="col-md-6"></div>
+        </div>
+        <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
-                <button type="button" class="btn btn-primary btn-lg" id="createAccountModal">Create an Account</button>
                 <button type="button" class="btn btn-secondary btn-lg" id="userLoginModal">Login</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6"><button type="button" class="btn btn-primary btn-lg" id="createAccount">Create
+                    an
+                    Account</button>
             </div>
         </div>
     </div>
@@ -60,30 +72,6 @@
             </div>
         </div>
     </div>
-    <div id="create-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span>Create new Account</span>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="newEmail">Enter your Email</label>
-                        <input type="email" class="form-control" id="newEmail" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="newPass">Create a secure password to use</label>
-                        <input type="password" class="form-control" id="newPass" placeholder="">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal"
-                        id="submitNewAccount">Submit</button>
-                </div>
-            </div>
-        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -94,15 +82,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="../app/app.js"></script>
-    <script type="text/javascript">
-
-        $("#userLoginModal").on("click", function () {
-            $("#login-modal").modal("toggle")
-        })
-        $("#createAccountModal").on("click", function () {
-            $("#create-modal").modal("toggle")
-        })
-    </script>
 </body>
 
 </html>
