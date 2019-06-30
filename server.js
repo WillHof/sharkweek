@@ -16,8 +16,9 @@ app.use(express.static("public"));
 require("./routing/htmlRoutes")(app);
 // require("./routing/apiRoutes")(app);
 
-
 // starting our Express app
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
+
+
