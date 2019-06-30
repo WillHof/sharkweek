@@ -1,7 +1,8 @@
-module.exports = async function (googleUser) {
-    var profile = await googleUser.getBasicProfile();
-    //send id token to database
+module.exports = function (googleUser) {
+    var profile = googleUser.getBasicProfile();
+    //need to send id token to database
     let id_token = googleUser.getAuthResponse().id_token;
+    return profile
 }
 
 // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.

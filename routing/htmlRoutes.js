@@ -5,7 +5,7 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
     });
     app.get("/", function (req, res) {
-        if (profile) {
+        if (googleLogin.getname()) {
             res.sendFile(path.join(__dirname, "../public/home.html"))
         }
         else { res.sendFile(path.join(__dirname, "../public/index.html")) }
