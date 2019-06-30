@@ -1,5 +1,5 @@
 const path = require("path");
-const googleLogin = require("./app/app.js")
+const googleLogin = require("../public/app/app.js")
 module.exports = function (app) {
     app.get("/about", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
