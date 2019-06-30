@@ -1,5 +1,6 @@
-module.exports = function (googleUser) {
+function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
+
     //need to send id token to database
     let id_token = googleUser.getAuthResponse().id_token;
 }
