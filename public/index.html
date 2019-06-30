@@ -8,9 +8,17 @@
     <title>Shark Week</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
 </head>
 
 <body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">
+            <img src="../app/Assets/Shark fin.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Shark Week
+        </a>
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
@@ -22,8 +30,8 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
-                <button type="button" class="btn btn-primary btn-lg" id="createAccount">Create an Account</button>
-                <button type="button" class="btn btn-secondary btn-lg" id="userLogin">Login</button>
+                <button type="button" class="btn btn-primary btn-lg" id="createAccountModal">Create an Account</button>
+                <button type="button" class="btn btn-secondary btn-lg" id="userLoginModal">Login</button>
             </div>
         </div>
     </div>
@@ -46,7 +54,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="submitLogin">Submit</button>
                 </div>
 
             </div>
@@ -71,7 +79,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                        id="submitNewAccount">Submit</button>
                 </div>
             </div>
         </div>
@@ -87,10 +96,10 @@
     <script src="../app/app.js"></script>
     <script type="text/javascript">
 
-        $("#userLogin").on("click", function () {
+        $("#userLoginModal").on("click", function () {
             $("#login-modal").modal("toggle")
         })
-        $("#createAccount").on("click", function () {
+        $("#createAccountModal").on("click", function () {
             $("#create-modal").modal("toggle")
         })
     </script>
