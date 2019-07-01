@@ -2,14 +2,14 @@ const path = require("path");
 const googleLogin = require("../public/app/app.js")
 
 module.exports = function (app) {
-    app.use(function (req, res, next) {
-        if (req.session.user == null) {
-            // if user is not logged-in redirect back to login page //
-            res.redirect('/');
-        } else {
-            next()
-        }
-    });
+    // app.use(function (req, res, next) {
+    //     if (req.session.user == null) {
+    //         // if user is not logged-in redirect back to login page //
+    //         res.redirect('/');
+    //     } else {
+    //         next()
+    //     }
+    // });
     app.get("/about", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
     });
