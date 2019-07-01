@@ -5,8 +5,12 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
     });
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/index.html"))
-
+        if (googleLogin) {
+            res.sendFile(path.join(__dirname, "../public/home.html"))
+        }
+        else {
+            res.sendFile(path.join(__dirname, "../public/index.html"))
+        }
     })
     app.get("/createAccount", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/createaccount.html"))
