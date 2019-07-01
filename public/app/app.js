@@ -2,7 +2,7 @@ function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
     const userName = profile.getName();
     const userImg = profile.getImageUrl();
-
+    console.log(userName)
     //need to send id token to database
     let id_token = googleUser.getAuthResponse().id_token;
     return userName
