@@ -1,5 +1,5 @@
 var userName
-module.exports = function onSignIn(googleUser) {
+function onSignIn(googleUser) {
     let profile = googleUser.getBasicProfile();
     userName = profile.getName();
     let userImg = profile.getImageUrl();
