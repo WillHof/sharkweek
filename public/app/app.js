@@ -1,5 +1,5 @@
 var userName
-function onSignIn(googleUser) {
+module.exports = function onSignIn(googleUser) {
     let profile = googleUser.getBasicProfile();
     userName = profile.getName();
     let userImg = profile.getImageUrl();
@@ -7,6 +7,7 @@ function onSignIn(googleUser) {
     let id_token = googleUser.getAuthResponse().id_token;
     return userName
 }
+
 
 // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
 // console.log('Name: ' + profile.getName());
