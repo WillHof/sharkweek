@@ -3,7 +3,7 @@ const googleLogin = require("../public/app/app.js")
 
 module.exports = function (app) {
     app.use(function (req, res, next) {
-        console.log(req)
+        console.log(req.session)
         next()
         // if (req.session.user === null) {
         //     //if user is not logged-in redirect back to login page //
