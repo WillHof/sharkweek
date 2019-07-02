@@ -5,6 +5,7 @@ function onSignIn(googleUser) {
     let userImg = profile.getImageUrl();
     //need to send id token to database
     let id_token = googleUser.getAuthResponse().id_token;
+    console.log(profile)
     return userName
 }
 
