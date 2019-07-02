@@ -12,16 +12,7 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-app.use(function (req, res, next) {
-    console.log(req)
-    next()
-    // if (req.session.user === null) {
-    //     //if user is not logged-in redirect back to login page //
-    //     res.redirect('/');
-    // } else {
-    //     next()
-    // }
-});
+
 // Routes
 require("./routing/htmlRoutes")(app);
 // require("./routing/apiRoutes")(app);
