@@ -2,7 +2,8 @@ const path = require("path");
 
 module.exports = function (app) {
     app.use(function (req, res, next) {
-        if (req.session.user === null) {
+        console.log(req.session)
+        if (req.session === null) {
             //if user is not logged-in redirect back to login page //
             res.redirect('/');
         } else {
