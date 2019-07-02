@@ -2,27 +2,27 @@ const path = require("path");
 const googleLogin = require("../public/app/app.js")
 
 module.exports = function (app) {
-    const checkAuth = (req, res, next) => {
+    // const checkAuth = (req, res, next) => {
 
-        if (authenticated) next()
+    //     if (authenticated) next()
 
-        /**
-        * not authenticated. So add the previous route
-        * to the req object and redirect
-        */
-        req.session.returnTo = req.path
-        res.redirect('/')
-    }
+    //     /**
+    //     * not authenticated. So add the previous route
+    //     * to the req object and redirect
+    //     */
+    //     req.session.returnTo = req.path
+    //     res.redirect('/')
+    // }
 
-    // then check if you need to redirect in your login page
+    // // then check if you need to redirect in your login page
 
-    app.get('/', (req, res) => {
-        //... authenticate then...
+    // app.get('/', (req, res) => {
+    //     //... authenticate then...
 
-        res.redirect(req.session.returnTo || '/home')
-        // reset req object
-        delete req.session.returnTo
-    })
+    //     res.redirect(req.session.returnTo || '/home')
+    //     // reset req object
+    //     delete req.session.returnTo
+    // })
 
     app.get("/about", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
