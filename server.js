@@ -20,7 +20,7 @@ app.use(function (req, res, next) {
         next()
     }
 });
-Routes
+// Routes
 require("./routing/htmlRoutes")(app);
 // require("./routing/apiRoutes")(app);
 
