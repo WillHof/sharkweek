@@ -1,15 +1,15 @@
 const path = require("path");
 
 module.exports = function (app) {
-    app.use(function (req, res, next) {
-        console.log(req.session)
-        if (req.session === undefined) {
-            //if user is not logged-in redirect back to login page //
-            res.redirect('/');
-        } else {
-            next()
-        }
-    });
+    // app.use(function (req, res, next) {
+    //     console.log(req.session)
+    //     if (req.session === undefined) {
+    //         //if user is not logged-in redirect back to login page //
+    //         res.redirect('/');
+    //     } else {
+    //         next()
+    //     }
+    // });
     // const checkAuth = (req, res, next) => {
     //     if (authenticated) next()
     //     /**
