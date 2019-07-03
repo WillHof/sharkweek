@@ -14,6 +14,7 @@ app.use(express.static("public"));
 
 
 // Routes
+require("./lib/oauth2")
 require("./routing/htmlRoutes")(app);
 // require("./routing/apiRoutes")(app);
 
