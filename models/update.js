@@ -1,8 +1,37 @@
 module.exports = function (sequelize, DataTypes) {
     var Update = sequelize.define("Update", {
-        // Giving the Update model a name of type STRING
-        name: DataTypes.STRING
-        //   
+
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        timeframe: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+
+        currentAverage: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+
+        currentDay: {
+            type: DataTypes.INTEGER
+        },
+
+        nextPredictedDateOne: {
+            type: DataTypes.DATE
+        },
+
+        actualDateOne: {
+            type: DataTypes.DATE
+        },
+
+        actualLastDate: {
+            type: DataTypes.DATE
+        }
+
     });
 
     Update.associate = function (models) {
@@ -10,9 +39,9 @@ module.exports = function (sequelize, DataTypes) {
             foreignKey: {
                 allowNull: false
             }
-        });
-
+        })
     };
 
     return Update;
+
 };
