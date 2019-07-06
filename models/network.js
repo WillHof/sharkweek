@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var Network = sequelize.define("Network", {
-        // Giving the Assoc model a name of type STRING
+
         email: {
             type: DataTypes.STRING
         },
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Network.associate = function (models) {
-        models.Network.BelongsTo(models.User, {
+        models.Network.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
