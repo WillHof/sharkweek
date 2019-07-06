@@ -16,10 +16,10 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "memm227zvysg6w6d",
-    "password": "xhyanaq3ezivciph",
-    "database": "vz1ospn9lu00w64c",
-    "host": "cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "devdvc3m8jfc7ekj",
+    "password": "cfy7g6cnto3vbat6",
+    "database": "x02ikj38budvcrbe",
+    "host": "s554ongw9quh1xjs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
