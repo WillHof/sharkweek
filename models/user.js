@@ -4,35 +4,33 @@ module.exports = function (sequelize, DataTypes) {
         firstName: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
 
         lastName: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+
         email: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
 
         dateCreated: {
             type: DataTypes.DATE,
             defaultValue: Sequelize.NOW,
             allowNull: false
-        }
+        },
+
         userType: {
             type: DataTypes.STRING,
             allowNull: false
         }
-
-
-        //   TESS COLUMNS GO HERE
     });
 
     User.associate = function (models) {
         models.User.hasMany(models.Update);
-
-
+        models.User.hasMany(models.Network);
     };
 
     return User;
