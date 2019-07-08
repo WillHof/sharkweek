@@ -8,16 +8,16 @@
 //     console.log(profile)
 //     return userName
 // }
-require("express");
-// Configure the session and session storage.
-const sessionConfig = {
-    resave: false,
-    saveUninitialized: false,
-    secret: config.get('SECRET'),
-    signed: true,
-    store: new DatastoreStore({
-        dataset: new Datastore({ kind: 'express-sessions' }),
-    }),
-};
+// require("express");
+// // Configure the session and session storage.
+// const sessionConfig = {
+//     resave: false,
+//     saveUninitialized: false,
+//     secret: config.get('SECRET'),
+//     signed: true,
+//     store: new DatastoreStore({
+//         dataset: new Datastore({ kind: 'express-sessions' }),
+//     }),
+// };
 
-app.use(session(sessionConfig));
+// app.use(session(sessionConfig));

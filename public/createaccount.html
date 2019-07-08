@@ -28,10 +28,13 @@
 
         <h3><strong>About You</strong></h3>
         <h4>Your First Name (Required)</h4>
-        <input type="text" id="username" class="form-control" required>
+        <input type="text" id="firstName" class="form-control" required>
 
         <h4> Your Last Name (Required)</h4>
-        <input type="text" id="name" class="form-control" required>
+        <input type="text" id="lastName" class="form-control" required>
+
+        <h4> Your Email (Required)</h4>
+        <input type="text" id="email" class="form-control" required>
 
         <hr>
 
@@ -184,86 +187,87 @@
         crossorigin="anonymous"></script>
     <script src="../app/app.js"></script>
 
-
+    <script src="app/createuser.js" type="text/javascript"></script>
     <script type="text/javascript">
 
 
-        // Chosen CSS
-        // var config = {
-        //     ".chosen-select": {},
-        //     ".chosen-select-deselect": {
-        //         allow_single_deselect: true
-        //     },
-        //     ".chosen-select-no-single": {
-        //         disable_search_threshold: 10
-        //     },
-        //     ".chosen-select-no-results": {
-        //         no_results_text: "Oops, nothing found!"
-        //     },
-        //     ".chosen-select-width": {
-        //         width: "95%"
-        //     }
-        // };
 
-        // for (var selector in config) {
-        //     $(selector).chosen(config[selector]);
-        // }
+    // Chosen CSS
+    // var config = {
+    // ".chosen-select": {},
+    // ".chosen-select-deselect": {
+    // allow_single_deselect: true
+    // },
+    // ".chosen-select-no-single": {
+    // disable_search_threshold: 10
+    // },
+    // ".chosen-select-no-results": {
+    // no_results_text: "Oops, nothing found!"
+    // },
+    // ".chosen-select-width": {
+    // width: "95%"
+    // }
+    // };
 
-        // Capture the form inputs
-        $("#submit").on("click", function (event) {
-            event.preventDefault();
+    // for (var selector in config) {
+    // $(selector).chosen(config[selector]);
+    // }
 
-            // Form validation
-            function validateForm() {
-                var isValid = true;
-                $(".form-control").each(function () {
-                    if ($(this).val() === "") {
-                        isValid = false;
-                    }
-                });
+    // Capture the form inputs
+    // $("#submit").on("click", function (event) {
+    // event.preventDefault();
 
-                $(".chosen-select").each(function () {
+    // // Form validation
+    // function validateForm() {
+    // var isValid = true;
+    // $(".form-control").each(function () {
+    // if ($(this).val() === "") {
+    // isValid = false;
+    // }
+    // });
 
-                    if ($(this).val() === "") {
-                        isValid = false;
-                    }
-                });
-                return isValid;
-            }
+    // $(".chosen-select").each(function () {
 
-            // If all required fields are filled
-            if (validateForm()) {
-                // Create an object for the user"s data
-                var userData = {
-                    username: $("#username").val(),
-                    name: $("#name").val(),
-                    responses: [
-                        $("#q1").val(),
-                        $("#q2").val(),
-                        $("#q3").val(),
-                        $("#q4").val(),
-                        $("#q5").val(),
-                        $("#q6").val(),
-                    ]
-                };
-                console.log(userData)
-                window.location.href = 'home.html';
+    // if ($(this).val() === "") {
+    // isValid = false;
+    // }
+    // });
+    // return isValid;
+    // }
 
-                // AJAX post the data to the friends API.
-                // $.post("/api/friends", userData, function (data) {
+    // // If all required fields are filled
+    // if (validateForm()) {
+    // // Create an object for the user"s data
+    // var userData = {
+    // username: $("#username").val(),
+    // name: $("#name").val(),
+    // responses: [
+    // $("#q1").val(),
+    // $("#q2").val(),
+    // $("#q3").val(),
+    // $("#q4").val(),
+    // $("#q5").val(),
+    // $("#q6").val(),
+    // ]
+    // };
+    // console.log(userData)
+    // window.location.href = 'home.html';
 
-                //     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                //     $("#match-name").text(data.name);
-                //     $("#match-img").attr("src", data.photo);
+    // AJAX post the data to the friends API.
+    // $.post("/api/friends", userData, function (data) {
 
-                //     // Show the modal with the best match
-                //     $("#results-modal").modal("toggle");
+    // // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+    // $("#match-name").text(data.name);
+    // $("#match-img").attr("src", data.photo);
 
-                // });
-            } else {
-                alert("Please fill out all questions before submitting!");
-            }
-        });
+    // // Show the modal with the best match
+    // $("#results-modal").modal("toggle");
+
+    // });
+    // } else {
+    // alert("Please fill out all questions before submitting!");
+    // }
+    // });
     </script>
 
 </body>
