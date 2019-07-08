@@ -22,6 +22,10 @@
     "express": "^4.17.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
-    "pg": "^7.11.0"
+    "pg": "^7.11.0",
+    "sequelize": "^5.9.4"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^5.5.0"
   }
 }
