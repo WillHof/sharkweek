@@ -16,12 +16,6 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
 
-        dateCreated: {
-            type: DataTypes.DATE,
-            // defaultValue: Sequelize.NOW,
-            allowNull: false
-        },
-
         userType: {
             type: DataTypes.STRING,
             allowNull: false
