@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 // Routes
 require("./routing/htmlRoutes")(app);
-// require("./routing/apiRoutes")(app);
+require("./routing/apiRoutes")(app);
 
 // Requiring our models for syncing
 var db = require("./models");
