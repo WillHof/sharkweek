@@ -50,7 +50,7 @@
                 <input type="text" id="email" class="form-control" required>
             </div>
 
-            <div class="form-group hidden">
+            <div class="form-group" id="Q1">
                 <label class="control-label">
                     <h4>Q1:Are you the main user or will you be using this app to support a significant other/family
                         member?</h4>
@@ -71,93 +71,159 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group hidden" id="Q2">
                 <label class="control-label">
-                    How would you rate your experience with us?
+                    <h4>Q2: If you are the main user: Do you know your average cycle length?</h4>
                 </label>
                 <div class="">
                     <div class="radio">
                         <label class="radio">
-                            <input name="rating" type="radio" value="Bad" />
-                            Bad
+                            <input name="q2" type="radio" value="Yes" />
+                            Yes
                         </label>
                     </div>
                     <div class="radio">
                         <label class="radio">
-                            <input name="rating" type="radio" value="Fair" />
-                            Fair
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label class="radio">
-                            <input name="rating" type="radio" value="Good" />
-                            Good
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label class="radio">
-                            <input name="rating" type="radio" value="Very Good" />
-                            Very Good
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label class="radio">
-                            <input name="rating" type="radio" value="Excellent" />
-                            Excellent
+                            <input name="q2" type="radio" value="No" />
+                            No
                         </label>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group hidden">
-                <label class="control-label" for="feedback_bad">
-                    We're sorry to hear you had a bad experience. What went wrong?
-                </label>
-                <textarea class="form-control" cols="40" id="feedback_bad" name="feedback_bad" rows="10"></textarea>
-            </div>
-
-            <div class="form-group hidden">
-                <label class="control-label" for="feedback_ok">
-                    Please tell us what you liked and how we can improve:
-                </label>
-                <textarea class="form-control form-control" cols="40" id="feedback_ok" name="feedback_ok"
-                    rows="10"></textarea>
-            </div>
-
-            <div class="form-group hidden" id="div_testimonial">
-                <div>
-                    <label class="control-label " for="testimonial">
-                        Wonderful! We're so glad to hear that. Would you be willing to write a customer comment for our
-                        website?
-                    </label>
-                    <div>
-                        <label class="radio-inline">
-                            <input name="testimonial" type="radio" value="yes" />
-                            Sure!
-                        </label>
-                        <label class="radio-inline">
-                            <input name="testimonial" type="radio" value="no" />
-                            I'd rather not.
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group hidden">
-                <label class="control-label " for="feedback_great">
-                    Thank you so much! Please leave your testimonial here:
-                </label>
-                <textarea class="form-control" cols="40" id="feedback_great" name="feedback_great" rows="10"></textarea>
-            </div>
-
-            <div class="form-group hidden" id="thanks_anyway">
+            <div class="form-group hidden" id="Q3">
                 <label class="control-label">
-                    No problem, thanks for being a customer!
+                    <h4>Q3: If you are the main user, and you know your cycle length: How many days is your average
+                        cycle
+                        length? (The
+                        length of time between the first day of your period, and the last day before your next period)
+                    </h4>
                 </label>
+                <select class="chosen-select" id="q3">
+                    <option value=""></option>
+                    <option value="15">15 </option>
+                    <option value="16">16 </option>
+                    <option value="17">17 </option>
+                    <option value="18">18 </option>
+                    <option value="19">19 </option>
+                    <option value="20">20 </option>
+                    <option value="21">21 </option>
+                    <option value="22">22 </option>
+                    <option value="23">23 </option>
+                    <option value="24">24 </option>
+                    <option value="25">25 </option>
+                    <option value="26">26 </option>
+                    <option value="27">27 </option>
+                    <option value="28">28 </option>
+                    <option value="29">29 </option>
+                    <option value="30">30 </option>
+                    <option value="31">31 </option>
+                    <option value="32">32 </option>
+                    <option value="33">33 </option>
+                    <option value="34">34 </option>
+                    <option value="35">35 </option>
+                    <option value="36">36 </option>
+                    <option value="37">37 </option>
+                    <option value="38">38 </option>
+                </select>
             </div>
 
-            <div class="form-group">
-                <button class="btn btn-primary " name="submit" type="submit">
+
+            <div class="form-group hidden" id="Q4">
+                <label class="control-label">
+                    <h4>Q4:If you are the main user, and you know your cycle length: What day in your cycle are you on
+                        right now? (The
+                        first day of your period being day 1)</h4>
+                </label>
+                <select class="chosen-select" id="q4">
+                    <option value=""></option>
+                    <option value="1">1 </option>
+                    <option value="2">2 </option>
+                    <option value="3">3 </option>
+                    <option value="4">4 </option>
+                    <option value="5">5 </option>
+                    <option value="6">6 </option>
+                    <option value="7">7 </option>
+                    <option value="8">8 </option>
+                    <option value="9">9 </option>
+                    <option value="10">10 </option>
+                    <option value="11">11 </option>
+                    <option value="12">12 </option>
+                    <option value="13">13 </option>
+                    <option value="14">14 </option>
+                    <option value="15">15 </option>
+                    <option value="16">16 </option>
+                    <option value="17">17 </option>
+                    <option value="18">18 </option>
+                    <option value="19">19 </option>
+                    <option value="20">20 </option>
+                    <option value="21">21 </option>
+                    <option value="22">22 </option>
+                    <option value="23">23 </option>
+                    <option value="24">24 </option>
+                    <option value="25">25 </option>
+                    <option value="26">26 </option>
+                    <option value="27">27 </option>
+                    <option value="28">28 </option>
+                    <option value="29">29 </option>
+                    <option value="30">30 </option>
+                    <option value="31">31 </option>
+                    <option value="32">32 </option>
+                    <option value="33">33 </option>
+                    <option value="34">34 </option>
+                    <option value="35">35 </option>
+                    <option value="36">36 </option>
+                    <option value="37">37 </option>
+                    <option value="38">38 </option>
+                </select>
+            </div>
+
+            <div class="form-group hidden" id="Q5">
+                <label class="control-label">
+                    <h4>Q5: If you are the main user, and you DO NOT know your cycle length: Do you have your period
+                        right now? </h4>
+                </label>
+                <div class="">
+                    <div class="radio">
+                        <label class="radio">
+                            <input name="q5" type="radio" value="Yes" />
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label class="radio">
+                            <input name="q5" type="radio" value="No" />
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group hidden" id="Q6">
+                <label class="control-label">
+                    <h4>Q6: If you are the main user, and you DO NOT know your cycle length, but you DO have your period
+                        right now: How
+                        many days ago did your period start? </h4>
+                </label>
+
+                <select class="chosen-select" id="q6">
+                    <option value=""></option>
+                    <option value="1">1 </option>
+                    <option value="2">2 </option>
+                    <option value="3">3 </option>
+                    <option value="4">4 </option>
+                    <option value="5">5 </option>
+                    <option value="6">6 </option>
+                    <option value="7">7 </option>
+                    <option value="8">8 </option>
+                    <option value="9">9 </option>
+                    <option value="10">10 </option>
+                </select>
+            </div>
+
+
+            <div class="form-group hidden" id="submit">
+                <button class="btn btn-primary " name="submit" id="submit" type="submit">
                     Submit
                 </button>
             </div>
@@ -188,74 +254,37 @@
 
         $(document).ready(function () { //wait until body loads
 
-            var testimonial_ok = false; //keeps track of whether the testimonial box is filled out
-            var firstLastEmail = false; //keeps track of whether first name, last name, and email are filled out. starts out as false
+            $("#Q1").click(function () {
+                if (this.value = "mainUser") {
+                    $("#Q2").toggleClass("hidden");
+                };
+            })
 
-            function required() {
-                let x = $('#firstName').val()
-                let y = $('#lastName').val()
-                let z = $('#email').val()
-                if (x || y || z === "") {
-                    alert("Please input a Value");
-                    return false;
-                }
-                else {
-                    alert('Code has accepted : you can try another');
-                    firstLastEmail = true;
-                    return true;
-                }
-            }
-            required()
+            $("#Q2").click(function () {
+                if (this.value = "Yes") {
+                    $("#Q3").toggleClass("hidden");
+                };
+            })
 
+            $("#Q3").click(function () {
+                if (this.value = "Yes") {
+                    $("#submit").toggleClass("hidden");
+                };
+            })
 
-            //Inputs that determine what fields to show
-            var accountType = $('#live_form input:radio[name=accountType]')
-            var rating = $('#live_form input:radio[name=rating]');
-            var testimonial = $('#live_form input:radio[name=testimonial]');
+            $("#Q2").click(function () {
+                if (this.value = "No") {
+                    $("#Q5").toggleClass("hidden");
+                };
+            })
 
-            //Wrappers for all fields
-            var bad = $('#live_form textarea[name="feedback_bad"]').parent();
-            var ok = $('#live_form textarea[name="feedback_ok"]').parent();
-            var great = $('#live_form textarea[name="feedback_great"]').parent();
-            var testimonial_parent = $('#live_form #div_testimonial');
-            var thanks_anyway = $('#live_form #thanks_anyway');
-            var all = bad.add(ok).add(great).add(testimonial_parent).add(thanks_anyway); //shortcut for all wrapper elements
-
-            rating.change(function () { //when the rating changes
-                var value = this.value;
-                all.addClass('hidden'); //hide everything and reveal as needed
-
-                if (value == 'Bad' || value == 'Fair') {
-                    bad.removeClass('hidden'); //show feedback_bad					
-                }
-                else if (value == 'Good' || value == 'Very Good') {
-                    ok.removeClass('hidden'); //show feedback_ok	
-                }
-                else if (value == 'Excellent') {
-                    testimonial_parent.removeClass('hidden'); //show testimonial question
-
-                    //if testimonial has already been answered
-                    if (testimonial_ok == 'yes') { great.removeClass('hidden'); }
-                    else if (testimonial_ok == 'no') { thanks_anyway.removeClass('hidden'); }
-                }
-            });
+            $("#Q5").click(function () {
+                if (this.value = "Yes") {
+                    $("#Q6").toggleClass("hidden");
+                };
+            })
 
 
-            testimonial.change(function () {
-                //hide all except testimonial question
-                all.addClass('hidden');
-                testimonial_parent.removeClass('hidden');
-
-                testimonial_ok = this.value;
-
-                if (testimonial_ok == 'yes') { //if user willing to write testimonial
-                    great.removeClass('hidden'); //show feedback_great
-                }
-                else {
-                    thanks_anyway.removeClass('hidden'); //show thanks message
-                }
-
-            });
         });
 
     </script>
