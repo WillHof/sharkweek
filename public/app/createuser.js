@@ -1,19 +1,20 @@
 $(document).ready(function () {
     // Getting references to the name input and author container, as well as the table body
 
-    function upsertUser(userData, userUpdate) {
+    function upsertUser(userData) {
         $.post("/api/createAccount", userData)
     }
     function upsertUserData(userUpdate) {
-        $.post("/api/createAccountData", userUpdate).then(console.log(userUpdate))
+        $.post("/api/createAccountData", userUpdate).then(window.location.href = "./home")
     }
 
     $("#submit").on("click", function (event) {
         event.preventDefault();
+
         var firstNameInput = $("#firstName").val().trim();
         var lastNameInput = $("#lastName").val().trim();
         var email = $("#email").val().trim();
-
+        localStorage.setItem("email", email);
         var q1userType = $("#q1").val().trim();
         var q2knowAvg = $("#q2").val().trim();
         var q3initAvgCycle = $("#q3").val().trim();

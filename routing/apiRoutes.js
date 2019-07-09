@@ -16,4 +16,12 @@ module.exports = function (app) {
             res.json(dbUserData);
         });
     });
+    app.post("/api/getUserData", function (req, res) {
+        console.log(req.body);
+        db.Update.findAll({
+            where: {
+                email: req.body.email
+            }
+        }).then(dbUserData => res.json(dbUserData))
+    })
 };
