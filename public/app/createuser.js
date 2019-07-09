@@ -1,10 +1,11 @@
 $(document).ready(function () {
     // Getting references to the name input and author container, as well as the table body
 
-
     function upsertUser(userData, userUpdate) {
         $.post("/api/createAccount", userData)
-            .then(console.log(userData));
+    }
+    function upsertUserData(userUpdate) {
+        $.post("/api/createAccountData", userUpdate).then(console.log(userUpdate))
     }
 
     $("#submit").on("click", function (event) {
@@ -28,13 +29,17 @@ $(document).ready(function () {
         if (q5initOnPeriod = "Yes") {
             q3initAvgCycle = q6initDaysSinceP + 1
         }
-
-        if (q2knowAvg === "No" && q5initOnPeriod === "No") {
+        else if (q2knowAvg === "No" && q5initOnPeriod === "No") {
             q3initAvgCycle = 28
             q4initCycleDay = 14
         }
-        nextDay1 = moment().format().add(1 + q3initAvgCycle - q4initCycleDay, 'days').calendar();
-
+        nextDay1 = moment().add(1 + q3initAvgCycle - q4initCycleDay, 'days').calendar();
+        console.log(q1userType)
+        console.log(q2knowAvg);
+        console.log(q3initAvgCycle)
+        console.log(q4initCycleDay)
+        console.log(q5initOnPeriod);
+        console.log(q6initDaysSinceP);
 
         // Calling the upsertUser function and passing in the value of the name input
         upsertUser({
@@ -42,15 +47,14 @@ $(document).ready(function () {
             lastName: lastNameInput,
             email: email,
             userType: q1userType,
-        },
-            {
-                email: email,
-                timeframe: 0,
-                currentAverage: q3initAvgCycle,
-                currentDay: q4initCycleDay,
-                nextPredictedDateOne: nextDay1,
-            });
-    }).then(function () {
-        window.location.href = "./home"
-    });
+        }
+        );
+        upsertUserData({
+            email: email,
+            timeframe: 0,
+            currentAverage: q3initAvgCycle,
+            currentDay: q4initCycleDay,
+            nextPredictedDateOne: nextDay1
+        });
+    })
 })
