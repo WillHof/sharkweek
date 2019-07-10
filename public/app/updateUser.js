@@ -1,16 +1,19 @@
 $(document).ready(function () {
     logincheck()
-
+    getHistory()
     function getHistory() {
         let email = {
             "email":
                 localStorage.getItem("email")
         }
         $.post("/api/getUserData", email, function (data) {
-            console.log(data)
+            let lastItem = (data.length - 1)
+            $("#cLength").text(`${data[lastItem].currentAverage} days`)
+            localStorage.setItem("user", JSON.stringify(data))
+
         })
     }
-    getHistory()
+
     function logincheck() {
         if (!localStorage.getItem("email")) {
             localStorage.setItem("email", "test@test.com")
@@ -19,11 +22,18 @@ $(document).ready(function () {
             // window.location.href="./"
         }
     }
-
+    function updateCurrentUser(data) {
+        $.post("/api/updateAccountData", data).then(function (response) {
+            console.log(response)
+        })
+    }
     $("#submitUpdate").on("click", function (event) {
         event.preventDefault();
+        let json = JSON.parse(localStorage.getItem("user"))
         let q1OnP = $("#q1").val();
         let q2PStart = $("#q2").val()
-
+        let email = localStorage.getItem("email")
+        let length = json.length - 1
+        let timeframe = json[length].timeframe + 1
     })
 })

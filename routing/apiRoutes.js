@@ -24,4 +24,10 @@ module.exports = function (app) {
             }
         }).then(dbUserData => res.json(dbUserData))
     })
+    app.post("/api/updateAccountData", function (req, res) {
+        console.log(req.body);
+        db.Update.create(req.body).then(function (dbUserData) {
+            res.json(dbUserData)
+        })
+    })
 };
