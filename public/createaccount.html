@@ -41,8 +41,8 @@
         <div id="Q1">
             <h3><strong>Question 1</strong></h3>
             <h4>Are you the main user or will you be using this app to support a significant other/family member?</h4>
-            <button id="mainUser">MainUser</button>
-            <button id="soFam">Significant Other/Family Member</button>
+            <button id="mainUser" value="mainUser">MainUser</button>
+            <button id="soFam" value="soFam">Significant Other/Family Member</button>
         </div>
 
         <div id="Q2">
@@ -196,53 +196,54 @@
     <script src="app/createuser.js" type="text/javascript"></script>
     <script type="text/javascript">
 
-        $(document).ready(function () {
+        // $(document).ready(function () {
 
-            $("#Q2").hide();
-            $("#Q3").hide();
-            $("#Q4").hide();
-            $("#submit").hide();
+        //     $("#Q2").hide();
+        //     $("#Q3").hide();
+        //     $("#Q4").hide();
+        //     $("#submit").hide();
 
-            $("#mainUser").on("click", function (event) {
-                event.preventDefault();
-                console.log("clicked main")
-                $("#Q2").show();
-            });
+        //     $("#mainUser").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("clicked main")
+        //         $("#Q2").show();
+        //     });
 
-            $("#soFam").on("click", function (event) {
-                event.preventDefault();
-                console.log("clicked fam")
-                $("#submit").show();
-            });
+        //     $("#soFam").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("clicked fam")
+        //         $("#submit").show();
+        //     });
 
-            // Q2
-            $("#yes").on("click", function (event) {
-                event.preventDefault();
-                console.log("clicked yes")
-                $("#Q3").show();
-            });
+        //     // Q2
+        //     $("#yes").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("clicked yes")
+        //         $("#Q3").show();
+        //     });
 
-            $("#no").on("click", function (event) {
-                event.preventDefault();
-                console.log("clicked no")
-                $("#submit").show();
-            });
+        //     $("#no").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("clicked no")
+        //         $("#submit").show();
+        //     });
 
-            // Q3 avg
-            $(".day").on("click", function (event) {
-                event.preventDefault();
-                console.log("meow")
-                $("#Q4").show();
-            });
+        //     // Q3 avg
+        //     $(".day").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("meow")
+        //         var q1userType = 
+        //         $("#Q4").show();
+        //     });
 
-            // Q4 cycleday
-            $(".cycleday").on("click", function (event) {
-                event.preventDefault();
-                console.log("cycle")
-                $("#submit").show();
-            });
+        //     // Q4 cycleday
+        //     $(".cycleday").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("cycle")
+        //         $("#submit").show();
+        //     });
 
-        });
+        // });
     </script>
 
 </body>
