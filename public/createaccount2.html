@@ -254,40 +254,79 @@
 
         $(document).ready(function () { //wait until body loads
 
-            $("#Q1").click(function () {
-                var userDataQ1 = {
-                    usertypeanswer: $("#Q1").val()
-                };
-                console.log(userDataQ1)
+            // $("#Q1").click(function () {
+            //     var userDataQ1 = {
+            //         usertypeanswer: $("#Q1").val()
+            //     };
+            //     console.log(userDataQ1)
 
-                if (userDataQ1 = "mainUser") {
-                    $("#Q2").toggleClass("hidden");
-                };
-            })
+            //     if (userDataQ1 = "mainUser") {
+            //         $("#Q2").toggleClass("hidden");
+            //     };
+            // })
 
-            $("#Q2").click(function () {
-                if (this.value = "Yes") {
-                    $("#Q3").toggleClass("hidden");
-                };
-            })
+            // $("#Q2").click(function () {
+            //     if (this.value = "Yes") {
+            //         $("#Q3").toggleClass("hidden");
+            //     };
+            // })
 
-            $("#Q3").click(function () {
-                if (this.value = "Yes") {
-                    $("#submit").toggleClass("hidden");
-                };
-            })
+            // $("#Q3").click(function () {
+            //     if (this.value = "Yes") {
+            //         $("#submit").toggleClass("hidden");
+            //     };
+            // })
 
-            $("#Q2").click(function () {
-                if (this.value = "No") {
-                    $("#Q5").toggleClass("hidden");
-                };
-            })
+            // $("#Q2").click(function () {
+            //     if (this.value = "No") {
+            //         $("#Q5").toggleClass("hidden");
+            //     };
+            // })
 
-            $("#Q5").click(function () {
-                if (this.value = "Yes") {
-                    $("#Q6").toggleClass("hidden");
+            // $("#Q5").click(function () {
+            //     if (this.value = "Yes") {
+            //         $("#Q6").toggleClass("hidden");
+            //     };
+            // })
+
+
+            form = $("#live_form")
+            form.change(function () {
+
+                console.log("something is changed")
+
+                var userData = {
+                    firstName: $("#username").val(),
+                    lastName: $("#name").val(),
+                    responses: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                    ]
                 };
-            })
+                console.log(userData)
+
+                // var userData = {
+                //     firstName: $("#username").val(),
+                //     lastName: $("#name").val(),
+                //     responses: [
+                //         $("#q1").val(),
+                //         $("#q2").val(),
+                //         $("#q3").val(),
+                //         $("#q4").val(),
+                //         $("#q5").val(),
+                //         $("#q6").val(),
+                //     ]
+                // };
+                // console.log(userData.responses[1])
+                // if (userData.responses[1] = 'mainUser') {
+                //     c
+                // }
+
+            });
 
 
         });
