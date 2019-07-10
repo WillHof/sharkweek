@@ -21,7 +21,7 @@
         </a>
     </nav>
 
-    <div class="container">
+    <div class="container" id="form">
 
         <h2>Account Creation</h2>
         <hr>
@@ -38,135 +38,135 @@
 
         <hr>
 
-        <h3><strong>Question 1</strong></h3>
-        <h4>Are you the main user or will you be using this app to support a significant other/family member?</h4>
-        <select class="chosen-select" id="q1">
-            <option value=""></option>
-            <option value="mainUser">Main User </option>
-            <option value="soFam">Significant Other/Family Member</option>
-        </select>
+        <div id="Q1">
+            <h3><strong>Question 1</strong></h3>
+            <h4>Are you the main user or will you be using this app to support a significant other/family member?</h4>
+            <button id="mainUser" value="mainUser">MainUser</button>
+            <button id="soFam" value="soFam">Significant Other/Family Member</button>
+        </div>
 
-        <h3><strong>Question 2</strong></h3>
-        <h4>If you are the main user: Do you know your average cycle length?</h4>
-        <select class="chosen-select" id="q2">
-            <option value=""></option>
-            <option value="yes">Yes </option>
-            <option value="no">No</option>
-        </select>
+        <div id="Q2">
+            <h3><strong>Question 2</strong></h3>
+            <h4>If you are the main user: Do you know your average cycle length?</h4>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Answer
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button" class="know" id="yes">Yes</button>
+                    <button class="dropdown-item" type="button" class="know" id="no">No</button>
 
+                </div>
+            </div>
+        </div>
 
-        <h3><strong>Question 3</strong></h3>
-        <h4>If you are the main user, and you know your cycle length: How many days is your average cycle length? (The
-            length of time between the first day of your period, and the last day before your next period)</h4>
-        <select class="chosen-select" id="q3">
-            <option value=""></option>
-            <option value="15">15 </option>
-            <option value="16">16 </option>
-            <option value="17">17 </option>
-            <option value="18">18 </option>
-            <option value="19">19 </option>
-            <option value="20">20 </option>
-            <option value="21">21 </option>
-            <option value="22">22 </option>
-            <option value="23">23 </option>
-            <option value="24">24 </option>
-            <option value="25">25 </option>
-            <option value="26">26 </option>
-            <option value="27">27 </option>
-            <option value="28">28 </option>
-            <option value="29">29 </option>
-            <option value="30">30 </option>
-            <option value="31">31 </option>
-            <option value="32">32 </option>
-            <option value="33">33 </option>
-            <option value="34">34 </option>
-            <option value="35">35 </option>
-            <option value="36">36 </option>
-            <option value="37">37 </option>
-            <option value="38">38 </option>
-        </select>
+        <div id="Q3">
+            <h3><strong>Question 3</strong></h3>
+            <h4>If you are the main user, and you know your cycle length: How many days is your average cycle length?
+                (The
+                length of time between the first day of your period, and the last day before your next period)</h4>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Day
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item day" type="button" value=15>15</button>
+                    <button class="dropdown-item day" type="button" value=16>16</button>
+                    <button class="dropdown-item day" type="button" value=17>17</button>
+                    <button class="dropdown-item day" type="button" value=18>18</button>
+                    <button class="dropdown-item day" type="button" value=19>19</button>
+                    <button class="dropdown-item day" type="button" value=20>20</button>
+                    <button class="dropdown-item day" type="button" value=21>21</button>
+                    <button class="dropdown-item day" type="button" value=22>22</button>
+                    <button class="dropdown-item day" type="button" value=23>23</button>
+                    <button class="dropdown-item day" type="button" value=24>24</button>
+                    <button class="dropdown-item day" type="button" value=25>25</button>
+                    <button class="dropdown-item day" type="button" value=26>26</button>
+                    <button class="dropdown-item day" type="button" value=27>27</button>
+                    <button class="dropdown-item day" type="button" value=28>28</button>
+                    <button class="dropdown-item day" type="button" value=29>29</button>
+                    <button class="dropdown-item day" type="button" value=30>30</button>
+                    <button class="dropdown-item day" type="button" value=31>31</button>
+                    <button class="dropdown-item day" type="button" value=32>32</button>
+                    <button class="dropdown-item day" type="button" value=33>33</button>
+                    <button class="dropdown-item day" type="button" value=34>34</button>
+                    <button class="dropdown-item day" type="button" value=35>35</button>
+                    <button class="dropdown-item day" type="button" value=36>36</button>
+                    <button class="dropdown-item day" type="button" value=37>37</button>
+                    <button class="dropdown-item day" type="button" value=38>38</button>
+                    <button class="dropdown-item day" type="button" value=39>39</button>
+                    <button class="dropdown-item day" type="button" value=40>40</button>
+                    <button class="dropdown-item day" type="button" value=41>41</button>
+                    <button class="dropdown-item day" type="button" value=42>42</button>
+                    <button class="dropdown-item day" type="button" value=43>43</button>
+                    <button class="dropdown-item day" type="button" value=44>44</button>
+                    <button class="dropdown-item day" type="button" value=45>45</button>
+                </div>
+            </div>
+        </div>
 
+        <div id="Q4">
+            <h3><strong>Question 4</strong></h3>
+            <h4>If you are the main user, and you know your cycle length: What day in your cycle are you on right now?
+                (The
+                first day of your period being day 1)</h4>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Day
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item cycleday" type="button" value=1">1</button>
+                    <button class="dropdown-item cycleday" type="button" value=2">2</button>
+                    <button class="dropdown-item cycleday" type="button" value=3">3</button>
+                    <button class="dropdown-item cycleday" type="button" value=4">4</button>
+                    <button class="dropdown-item cycleday" type="button" value=5">5</button>
+                    <button class="dropdown-item cycleday" type="button" value=6">6</button>
+                    <button class="dropdown-item cycleday" type="button" value=7">7</button>
+                    <button class="dropdown-item cycleday" type="button" value=8">8</button>
+                    <button class="dropdown-item cycleday" type="button" value=9">9</button>
+                    <button class="dropdown-item cycleday" type="button" value=10">10</button>
+                    <button class="dropdown-item cycleday" type="button" value=11">11</button>
+                    <button class="dropdown-item cycleday" type="button" value=12">12</button>
+                    <button class="dropdown-item cycleday" type="button" value=13">13</button>
+                    <button class="dropdown-item cycleday" type="button" value=14">14</button>
+                    <button class="dropdown-item cycleday" type="button" value=15>15</button>
+                    <button class="dropdown-item cycleday" type="button" value=16>16</button>
+                    <button class="dropdown-item cycleday" type="button" value=17>17</button>
+                    <button class="dropdown-item cycleday" type="button" value=18>18</button>
+                    <button class="dropdown-item cycleday" type="button" value=19>19</button>
+                    <button class="dropdown-item cycleday" type="button" value=20>20</button>
+                    <button class="dropdown-item cycleday" type="button" value=21>21</button>
+                    <button class="dropdown-item cycleday" type="button" value=22>22</button>
+                    <button class="dropdown-item cycleday" type="button" value=23>23</button>
+                    <button class="dropdown-item cycleday" type="button" value=24>24</button>
+                    <button class="dropdown-item cycleday" type="button" value=25>25</button>
+                    <button class="dropdown-item cycleday" type="button" value=26>26</button>
+                    <button class="dropdown-item cycleday" type="button" value=27>27</button>
+                    <button class="dropdown-item cycleday" type="button" value=28>28</button>
+                    <button class="dropdown-item cycleday" type="button" value=29>29</button>
+                    <button class="dropdown-item cycleday" type="button" value=30>30</button>
+                    <button class="dropdown-item cycleday" type="button" value=31>31</button>
+                    <button class="dropdown-item cycleday" type="button" value=32>32</button>
+                    <button class="dropdown-item cycleday" type="button" value=33>33</button>
+                    <button class="dropdown-item cycleday" type="button" value=34>34</button>
+                    <button class="dropdown-item cycleday" type="button" value=35>35</button>
+                    <button class="dropdown-item cycleday" type="button" value=36>36</button>
+                    <button class="dropdown-item cycleday" type="button" value=37>37</button>
+                    <button class="dropdown-item cycleday" type="button" value=38>38</button>
+                    <button class="dropdown-item cycleday" type="button" value=39>39</button>
+                    <button class="dropdown-item cycleday" type="button" value=40>40</button>
+                    <button class="dropdown-item cycleday" type="button" value=41>41</button>
+                    <button class="dropdown-item cycleday" type="button" value=42>42</button>
+                    <button class="dropdown-item cycleday" type="button" value=43>43</button>
+                    <button class="dropdown-item cycleday" type="button" value=44>44</button>
+                    <button class="dropdown-item cycleday" type="button" value=45>45</button>
 
-        <h3><strong>Question 4</strong></h3>
-        <h4>If you are the main user, and you know your cycle length: What day in your cycle are you on right now? (The
-            first day of your period being day 1)</h4>
-        <select class="chosen-select" id="q4">
-            <option value=""></option>
-            <option value="1">1 </option>
-            <option value="2">2 </option>
-            <option value="3">3 </option>
-            <option value="4">4 </option>
-            <option value="5">5 </option>
-            <option value="6">6 </option>
-            <option value="7">7 </option>
-            <option value="8">8 </option>
-            <option value="9">9 </option>
-            <option value="10">10 </option>
-            <option value="11">11 </option>
-            <option value="12">12 </option>
-            <option value="13">13 </option>
-            <option value="14">14 </option>
-            <option value="15">15 </option>
-            <option value="16">16 </option>
-            <option value="17">17 </option>
-            <option value="18">18 </option>
-            <option value="19">19 </option>
-            <option value="20">20 </option>
-            <option value="21">21 </option>
-            <option value="22">22 </option>
-            <option value="23">23 </option>
-            <option value="24">24 </option>
-            <option value="25">25 </option>
-            <option value="26">26 </option>
-            <option value="27">27 </option>
-            <option value="28">28 </option>
-            <option value="29">29 </option>
-            <option value="30">30 </option>
-            <option value="31">31 </option>
-            <option value="32">32 </option>
-            <option value="33">33 </option>
-            <option value="34">34 </option>
-            <option value="35">35 </option>
-            <option value="36">36 </option>
-            <option value="37">37 </option>
-            <option value="38">38 </option>
-            <option value="39">39 </option>
-            <option value="40">40 </option>
-            <option value="41">41 </option>
-            <option value="42">42 </option>
-            <option value="43">43 </option>
-            <option value="44">44 </option>
-            <option value="45">45 </option>
-        </select>
-
-
-        <h3><strong>Question 5</strong></h3>
-        <h4>If you are the main user, and you DO NOT know your cycle length: Do you have your period right now? </h4>
-        <select class="chosen-select" id="q5">
-            <option value=""></option>
-            <option value="yes">Yes </option>
-            <option value="no">No </option>
-        </select>
-
-
-        <h3><strong>Question 6</strong></h3>
-        <h4>If you are the main user, and you DO NOT know your cycle length, but you DO have your period right now: How
-            many days ago did your period start? </h4>
-        <select class="chosen-select" id="q6">
-            <option value=""></option>
-            <option value="1">1 </option>
-            <option value="2">2 </option>
-            <option value="3">3 </option>
-            <option value="4">4 </option>
-            <option value="5">5 </option>
-            <option value="6">6 </option>
-            <option value="7">7 </option>
-            <option value="8">8 </option>
-            <option value="9">9 </option>
-            <option value="10">10 </option>
-        </select>
-
-
+                </div>
+            </div>
+        </div>
         <br>
         <br>
 
@@ -183,7 +183,7 @@
     </div>
 
     <!-- Javascript -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -192,89 +192,58 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="../app/app.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="app/createuser.js" type="text/javascript"></script>
     <script type="text/javascript">
 
+        // $(document).ready(function () {
 
+        //     $("#Q2").hide();
+        //     $("#Q3").hide();
+        //     $("#Q4").hide();
+        //     $("#submit").hide();
 
-    // Chosen CSS
-    // var config = {
-    // ".chosen-select": {},
-    // ".chosen-select-deselect": {
-    // allow_single_deselect: true
-    // },
-    // ".chosen-select-no-single": {
-    // disable_search_threshold: 10
-    // },
-    // ".chosen-select-no-results": {
-    // no_results_text: "Oops, nothing found!"
-    // },
-    // ".chosen-select-width": {
-    // width: "95%"
-    // }
-    // };
+        //     $("#mainUser").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("clicked main")
+        //         $("#Q2").show();
+        //     });
 
-    // for (var selector in config) {
-    // $(selector).chosen(config[selector]);
-    // }
+        //     $("#soFam").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("clicked fam")
+        //         $("#submit").show();
+        //     });
 
-    // Capture the form inputs
-    // $("#submit").on("click", function (event) {
-    // event.preventDefault();
+        //     // Q2
+        //     $("#yes").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("clicked yes")
+        //         $("#Q3").show();
+        //     });
 
-    // // Form validation
-    // function validateForm() {
-    // var isValid = true;
-    // $(".form-control").each(function () {
-    // if ($(this).val() === "") {
-    // isValid = false;
-    // }
-    // });
+        //     $("#no").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("clicked no")
+        //         $("#submit").show();
+        //     });
 
-    // $(".chosen-select").each(function () {
+        //     // Q3 avg
+        //     $(".day").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("meow")
+        //         var q1userType = 
+        //         $("#Q4").show();
+        //     });
 
-    // if ($(this).val() === "") {
-    // isValid = false;
-    // }
-    // });
-    // return isValid;
-    // }
+        //     // Q4 cycleday
+        //     $(".cycleday").on("click", function (event) {
+        //         event.preventDefault();
+        //         console.log("cycle")
+        //         $("#submit").show();
+        //     });
 
-    // // If all required fields are filled
-    // if (validateForm()) {
-    // // Create an object for the user"s data
-    // var userData = {
-    // username: $("#username").val(),
-    // name: $("#name").val(),
-    // responses: [
-    // $("#q1").val(),
-    // $("#q2").val(),
-    // $("#q3").val(),
-    // $("#q4").val(),
-    // $("#q5").val(),
-    // $("#q6").val(),
-    // ]
-    // };
-    // console.log(userData)
-    // window.location.href = 'home.html';
-
-    // AJAX post the data to the friends API.
-    // $.post("/api/friends", userData, function (data) {
-
-    // // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-    // $("#match-name").text(data.name);
-    // $("#match-img").attr("src", data.photo);
-
-    // // Show the modal with the best match
-    // $("#results-modal").modal("toggle");
-
-    // });
-    // } else {
-    // alert("Please fill out all questions before submitting!");
-    // }
-    // });
+        // });
     </script>
 
 </body>
