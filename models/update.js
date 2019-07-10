@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
     Update.associate = function (models) {
         models.Update.belongsTo(models.User, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         })
     };
