@@ -23,8 +23,7 @@ $(document).ready(function () {
         var q3initAvgCycle = $("#q3").val().trim();
         //what day on your cycle are you?
         var q4initCycleDay = $("#q4").val().trim();
-        // var q5initOnPeriod = $("#q5").val().trim();
-        // var q6initDaysSinceP = $("#q6").val().trim();
+
         const today = moment();
         let nextDay1
         let actualDay1
