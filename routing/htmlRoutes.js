@@ -1,9 +1,27 @@
 const path = require("path");
 const url = require("../server.js")
+const { google } = require("googleapis");
+const oauth2Client = new google.auth.OAuth2(
+    process.env.GClientID,
+    process.env.GSecret,
+    "https://sharkweek-54.herokuapp.com/home"
+);
+const scopes = [
+    "https://www.googleapis.com/auth/calendar.events"
+];
+const url = oauth2Client.generateAuthUrl({
+    access_type: 'offline',
+    scope: scopes
+})
+
 module.exports = function (app) {
     app.get("/url", function (req, res) {
         res.send(url)
     });
+    app.get("/token", function (req, res) {
+        const { tokens } = oauth2Client.getToken(req.body)
+        oauth2Client.setCredentials(tokens);
+    })
     app.get("/about", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
     });

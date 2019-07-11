@@ -29,16 +29,24 @@ $(document).ready(function () {
             console.log(response)
         })
     }
+
     //this gets the code for making api calls with the user token recieved from google, sets it in local storage
     $("#google").on("click", function (event) {
         event.preventDefault();
         $.get("/url", function (data) {
             window.location.replace(data);
             let index = data.indexOf("code=");
-            let code = data.substring(index, (data.indexOf("&scope")))
+            const code = data.substring(index, (data.indexOf("&scope")))
             localStorage.setitem("code", code)
+            getToken(code)
         })
     })
+    //gets the access token from google using the code 
+    function getToken(code) {
+        $.post("/token", code, function (data) {
+            console.log(data)
+        })
+    }
     $("#submitUpdate").on("click", function (event) {
         event.preventDefault();
         let json = JSON.parse(localStorage.getItem("user"))
