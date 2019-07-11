@@ -30,7 +30,7 @@ module.exports = function (app) {
         if (req.query.code) {
             const { tokens } = oauth2Client.getToken(req.query.code)
             oauth2Client.setCredentials(tokens);
-
+            console.log(oauth2Client.setCredentials(tokens))
         }
         res.sendFile(path.join(__dirname, "../public/home.html")
         )
