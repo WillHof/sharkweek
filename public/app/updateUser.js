@@ -38,6 +38,7 @@ $(document).ready(function () {
             let index = data.indexOf("code=");
             const code = data.substring(index, (data.indexOf("&scope")))
             localStorage.setitem("code", code)
+            console.log(code)
             getToken(code)
         })
     })
