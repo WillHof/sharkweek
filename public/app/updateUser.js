@@ -35,11 +35,11 @@ $(document).ready(function () {
         event.preventDefault();
         $.get("/url", function (data) {
             window.location.replace(data);
-            let index = data.indexOf("code=");
-            const code = data.substring(index, (data.indexOf("&scope")))
-            localStorage.setitem("code", code)
-            console.log(code)
-            getToken(code)
+            // let index = data.indexOf("code=");
+            // const code = data.substring(index, (data.indexOf("&scope")))
+            // localStorage.setitem("code", code)
+            // console.log(code)
+            // getToken(code)
         })
     })
     //gets the access token from google using the code 
