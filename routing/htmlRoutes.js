@@ -28,9 +28,9 @@ module.exports = function (app) {
     app.get("/home", function (req, res) {
         console.log(req.query.code)
         if (req.query.code) {
-            const { tokens } = oauth2Client.getToken(req.body)
+            const { tokens } = oauth2Client.getToken(req.query.code)
             oauth2Client.setCredentials(tokens);
-            console.log(oauth2Client.setCredentials(tokens))
+
         }
         res.sendFile(path.join(__dirname, "../public/home.html")
         )
