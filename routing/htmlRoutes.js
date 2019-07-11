@@ -25,12 +25,13 @@ module.exports = function (app) {
     app.get("/createAccount", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/createaccount.html"))
     });
-    app.get("/home", function (req, res) {
+    app.get("/home", async function (req, res) {
+        console.log(process.env.GClientID)
         console.log(req.query.code)
         if (req.query.code) {
-            const { tokens } = oauth2Client.getToken(req.query.code)
+            const { tokens } = await oauth2Client.getToken(req.query.code)
             oauth2Client.setCredentials(tokens);
-            console.log(oauth2Client.setCredentials(tokens))
+            console.log(tokens)
         }
         res.sendFile(path.join(__dirname, "../public/home.html")
         )
