@@ -14,8 +14,7 @@ module.exports = function (app) {
 
     });
     app.get("/token", function (req, res) {
-        const { tokens } = oauth2Client.getToken(req.body)
-        oauth2Client.setCredentials(tokens);
+
     })
     app.get("/about", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
@@ -28,7 +27,13 @@ module.exports = function (app) {
     });
     app.get("/home", function (req, res) {
         console.log(req.query.code)
-        res.sendFile(path.join(__dirname, "../public/home.html"))
+        if (req.query.code) {
+            const { tokens } = oauth2Client.getToken(req.body)
+            oauth2Client.setCredentials(tokens);
+            console.log(oauth2Client.setCredentials(tokens))
+        }
+        res.sendFile(path.join(__dirname, "../public/home.html")
+        )
     });
     app.get("/sofamhome", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/sofamhome.html"))
