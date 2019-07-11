@@ -68,13 +68,8 @@ $(document).ready(function () {
         //do you know your average?
         //what is your average cycle length?
         //what day on your cycle are you?
-<<<<<<< HEAD
-        var q4initCycleDay = $("#q4").val().trim();
-
-=======
         // var q5initOnPeriod = $("#q5").val().trim();
         // var q6initDaysSinceP = $("#q6").val().trim();
->>>>>>> feature/conditionalform
         const today = moment();
         let nextDay1
         let actualDay1

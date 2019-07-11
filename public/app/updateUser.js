@@ -1,6 +1,8 @@
 $(document).ready(function () {
     logincheck()
     getHistory()
+
+
     function getHistory() {
         let email = {
             "email":
@@ -17,7 +19,7 @@ $(document).ready(function () {
     function logincheck() {
         if (!localStorage.getItem("email")) {
             localStorage.setItem("email", "test@test.com")
-            // !!!!Uncomment this out when we go live, will put in TEST ACCOUNT INFO
+            // !!!!Uncomment this out when we go live, are putting in TEST ACCOUNT INFO
             // alert("You Are Not Logged In");
             // window.location.href="./"
         }
@@ -27,6 +29,16 @@ $(document).ready(function () {
             console.log(response)
         })
     }
+    //this gets the code for making api calls with the user token recieved from google, sets it in local storage
+    $("#google").on("click", function (event) {
+        event.preventDefault();
+        $.get("/url", function (data) {
+            window.location.replace(data);
+            let index = data.indexOf("code=");
+            let code = data.substring(index, (data.indexOf("&scope")))
+            localStorage.setitem("code", code)
+        })
+    })
     $("#submitUpdate").on("click", function (event) {
         event.preventDefault();
         let json = JSON.parse(localStorage.getItem("user"))
