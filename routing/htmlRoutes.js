@@ -6,13 +6,7 @@ const oauth2Client = new google.auth.OAuth2(
     process.env.GSecret,
     "https://sharkweek-54.herokuapp.com/home"
 );
-const scopes = [
-    "https://www.googleapis.com/auth/calendar.events"
-];
-const url = oauth2Client.generateAuthUrl({
-    access_type: 'offline',
-    scope: scopes
-})
+
 
 module.exports = function (app) {
     app.get("/url", function (req, res) {
