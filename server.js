@@ -5,6 +5,15 @@ const { google } = require("googleapis");
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 8080;
+const session = require('express-session')
+
+
+// Sets up the Express Session Library
+// https://www.npmjs.com/package/express-session
+app.use(session({
+    secret: 'cat'
+}))
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
