@@ -9,16 +9,12 @@ $(document).ready(function () {
             email: $("#email").val()
         };
 
-        console.log(userLoginData.email)
-
-        // localStorage.setItem("email", $("#email").val())
-        // localStorage.setItem("firstName", $("#firstName").val())
 
         function checkLogin(userLoginData) {
             $.post("/api/checkLogin", userLoginData)
         }
 
-        checkLogin(userLoginData)
+        checkLogin({ "email": $("#email").val() })
 
     });
 

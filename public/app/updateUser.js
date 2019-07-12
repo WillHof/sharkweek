@@ -56,16 +56,30 @@ $(document).ready(function () {
     function logincheck() {
         if (!localStorage.getItem("email")) {
             localStorage.setItem("email", "test@test.com")
-            // !!!!Uncomment this out when we go live, will put in TEST ACCOUNT INFO
+            // !!!!Uncomment this out when we go live, are putting in TEST ACCOUNT INFO
             // alert("You Are Not Logged In");
             // window.location.href="./"
         }
     }
-    // function updateCurrentUser(data) {
-    //     $.post("/api/updateAccountData", data).then(function (response) {
-    //         console.log(response)
-    //     })
-    // }
+    function updateCurrentUser(data) {
+        $.post("/api/updateAccountData", data).then(function (response) {
+            console.log(response)
+        })
+    }
+
+    //this gets the code for making api calls with the user token recieved from google, sets it in local storage
+    $("#google").on("click", function (event) {
+        event.preventDefault();
+        $.get("/url", function (data) {
+            window.location.replace(data);
+        })
+    })
+    //gets the access token from google using the code 
+    function getToken(code) {
+        $.post("/token", code, function (data) {
+            console.log(data)
+        })
+    }
     $("#submitUpdate").on("click", function (event) {
         event.preventDefault();
         let json = JSON.parse(localStorage.getItem("user"))

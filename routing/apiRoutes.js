@@ -1,5 +1,5 @@
 var db = require("../models");
-
+const path = require("path")
 module.exports = function (app) {
 
     app.post("/api/createAccount", function (req, res) {
@@ -36,10 +36,15 @@ module.exports = function (app) {
             where: {
                 email: req.body.email
             }
-        }).then(function (data) {
-            console.log(data)
-            req.session.email = data.email
-        })
+        }).then(results => {
+            if (results) {
+                res.sendFile(path.join(__dirname, "../public/home.html"))
+            }
+            else {
+                res.sendFile(path.join(__dirname, "../public/index.html"))
+            }
+        }
+        )
 
     });
 
