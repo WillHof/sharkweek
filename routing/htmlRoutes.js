@@ -6,9 +6,11 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
     });
     app.get("/", function (req, res) {
+        r
         res.sendFile(path.join(__dirname, "../public/index.html"))
     })
     app.get("/createAccount", function (req, res) {
+        req.session.user = "email"
         res.sendFile(path.join(__dirname, "../public/createaccount.html"))
     })
     app.get("/home", function (req, res) {
@@ -18,6 +20,7 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/sofamhome.html"))
     })
     app.get("/purchase", function (req, res) {
+        console.log(req.session.user)
         res.sendFile(path.join(__dirname, "../public/purchase.html"))
     })
 }

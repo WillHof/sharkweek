@@ -23,20 +23,24 @@ module.exports = function (app) {
                 email: req.body.email
             }
         }).then(dbUserData => res.json(dbUserData))
-    })
+    });
     app.post("/api/updateAccountData", function (req, res) {
         console.log(req.body);
         db.Update.create(req.body).then(function (dbUserData) {
             res.json(dbUserData)
         })
-    })
+    });
+
     app.post("/api/checkLogin", function (req, res) {
-        console.log(req.body)
-        db.Update.findAll({
+        db.User.findOne({
             where: {
                 email: req.body.email
             }
+        }).then(function (data) {
+            console.log(data)
+            req.session.email = data.email
         })
-        res.sendFile(path.join(__dirname, "../public/home.html"))
+
     });
-};
+
+}

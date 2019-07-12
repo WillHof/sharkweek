@@ -1,6 +1,46 @@
 $(document).ready(function () {
+
+
+    $("#upToDate").hide();
+    $("#submitUpdate").hide();
+    $("#q2").hide();
+
+    var userUpdateObj = {}
+
+    // q1
+
+    $("#yes").on("click", function (event) {
+        event.preventDefault();
+        userUpdateObj.onP = "yes"
+        console.log(userUpdateObj)
+        $("#q2").show();
+        $("#q1").hide();
+    });
+
+    $("#no").on("click", function (event) {
+        event.preventDefault();
+        userUpdateObj.onP = "no"
+        console.log(userUpdateObj)
+        // $("#submitUpdate").show();
+        $("#q1").hide();
+        $("#upToDate").show();
+    });
+
+    // q2 pday
+    $(".pday").on("click", function (event) {
+        event.preventDefault();
+        userUpdateObj.pday = this.value
+        console.log(userUpdateObj)
+        // $("#submitUpdate").show();
+        $("#q1").hide();
+        $("#q2").hide();
+        $("#upToDate").show();
+    });
+
+
     logincheck()
     getHistory()
+
     function getHistory() {
         let email = {
             "email":
@@ -10,7 +50,6 @@ $(document).ready(function () {
             let lastItem = (data.length - 1)
             $("#cLength").text(`${data[lastItem].currentAverage} days`)
             localStorage.setItem("user", JSON.stringify(data))
-
         })
     }
 
@@ -22,11 +61,11 @@ $(document).ready(function () {
             // window.location.href="./"
         }
     }
-    function updateCurrentUser(data) {
-        $.post("/api/updateAccountData", data).then(function (response) {
-            console.log(response)
-        })
-    }
+    // function updateCurrentUser(data) {
+    //     $.post("/api/updateAccountData", data).then(function (response) {
+    //         console.log(response)
+    //     })
+    // }
     $("#submitUpdate").on("click", function (event) {
         event.preventDefault();
         let json = JSON.parse(localStorage.getItem("user"))

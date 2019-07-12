@@ -48,38 +48,59 @@
 
 
         <!-- IF BELOW QUESTIONS HAVE ALREADY BEEN COMPLETED THAT DAY BY USER, HIDE BELOW -->
-        <h3><strong>Update Your Cycle (Q1)</strong></h3>
-        <h4>Are you on your period today?</h4>
-        <select class="chosen-select" id="q1">
-            <option value=""></option>
-            <option value="Yes">Yes </option>
-            <option value="No">No </option>
-        </select>
+        <div id="q1">
+            <h3><strong>Update Your Cycle (Q1)</strong></h3>
+            <h4>Are you on your period today?</h4>
 
-        <h3><strong>Update Your Cycle (Q2)</strong></h3>
-        <h4>IF YES: How many days ago did your period start?</h4>
-        <select class="chosen-select" id="q2">
-            <option value=""></option>
-            <option value="0">0</option>
-            <option value="1">1 </option>
-            <option value="2">2 </option>
-            <option value="3">3 </option>
-            <option value="4">4 </option>
-            <option value="5">5 </option>
-            <option value="6">6 </option>
-            <option value="7">7 </option>
-            <option value="8">8 </option>
-            <option value="9">9 </option>
-            <option value="10">10 </option>
-        </select>
+            <button type="button" class="btn btn-success btn-lg" id="yes" value="yes">Yes</button>
+            <button type="button" class="btn btn-danger btn-lg" id="no" value="no">No </button>
+
+        </div>
+
+        <div id="q2">
+
+            <h3><strong>Update Your Cycle (Q2)</strong></h3>
+            <h4>How many days ago did your period start?</h4>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Days</label>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Day
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item pday" type="button" value=1>1</button>
+                        <button class="dropdown-item pday" type="button" value=2>2</button>
+                        <button class="dropdown-item pday" type="button" value=3>3</button>
+                        <button class="dropdown-item pday" type="button" value=4>4</button>
+                        <button class="dropdown-item pday" type="button" value=5>5</button>
+                        <button class="dropdown-item pday" type="button" value=6>6</button>
+                        <button class="dropdown-item pday" type="button" value=7>7</button>
+                        <button class="dropdown-item pday" type="button" value=8>8</button>
+                        <button class="dropdown-item pday" type="button" value=9>9</button>
+                        <button class="dropdown-item pday" type="button" value=10>10</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
         <br>
         <br>
 
         <!-- Submit Button -->
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitUpdate"><i class="fa fa-check-circle"
-                aria-hidden="true"></i>
-            Submit</button>
+                aria-hidden="true"></i> Submit
+        </button>
+
+        <br>
+
+        <div id="upToDate">
+            <h3><strong>Congratulations, your Sharkweek Cycle Tracker is up to Date!</strong></h3>
+        </div>
 
     </div>
 
@@ -93,7 +114,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="/app/updateUser.js"></script>
+    <script src="./app/updateUser.js"></script>
 </body>
 
 </html>
