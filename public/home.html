@@ -48,30 +48,38 @@
 
 
         <!-- IF BELOW QUESTIONS HAVE ALREADY BEEN COMPLETED THAT DAY BY USER, HIDE BELOW -->
-        <h3><strong>Update Your Cycle (Q1)</strong></h3>
-        <h4>Are you on your period today?</h4>
-        <select class="chosen-select" id="q1">
-            <option value=""></option>
-            <option value="Yes">Yes </option>
-            <option value="No">No </option>
-        </select>
+        <div id="q1">
+            <h3><strong>Update Your Cycle (Q1)</strong></h3>
+            <h4>Are you on your period today?</h4>
 
-        <h3><strong>Update Your Cycle (Q2)</strong></h3>
-        <h4>IF YES: How many days ago did your period start?</h4>
-        <select class="chosen-select" id="q2">
-            <option value=""></option>
-            <option value="0">0</option>
-            <option value="1">1 </option>
-            <option value="2">2 </option>
-            <option value="3">3 </option>
-            <option value="4">4 </option>
-            <option value="5">5 </option>
-            <option value="6">6 </option>
-            <option value="7">7 </option>
-            <option value="8">8 </option>
-            <option value="9">9 </option>
-            <option value="10">10 </option>
-        </select>
+            <button type="button" class="btn btn-success btn-lg" id="yes" value="yes">Yes</button>
+            <button type="button" class="btn btn-danger btn-lg" id="no" value="no">No </button>
+
+        </div>
+
+        <div id="q2">
+            <h3><strong>Update Your Cycle (Q2)</strong></h3>
+            <h4>IF YES: How many days ago did your period start?</h4>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Days</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option id="1" class="pday" value="1">1</option>
+                    <option id="2" class="pday" value="2">2</option>
+                    <option id="3" class="pday" value="3">3</option>
+                    <option id="4" class="pday" value="4">4</option>
+                    <option id="5" class="pday" value="5">5</option>
+                    <option id="6" class="pday" value="6">6</option>
+                    <option id="7" class="pday" value="7">7</option>
+                    <option id="8" class="pday" value="8">8</option>
+                    <option id="9" class="pday" value="9">9</option>
+                    <option id="10" class="pday" value="10">10</option>
+                </select>
+            </div>
+        </div>
 
         <br>
         <br>
@@ -93,7 +101,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="/app/updateUser.js"></script>
+    <script src="./app/updateUser.js"></script>
 </body>
 
 </html>
