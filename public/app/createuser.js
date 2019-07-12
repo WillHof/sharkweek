@@ -13,6 +13,9 @@ $(document).ready(function () {
         event.preventDefault();
         newUserObj.userType = "mainUser"
         $("#Q2").show();
+        $("#Q0").hide();
+        $("#Q1").hide();
+
     });
 
     $("#soFam").on("click", function (event) {
@@ -26,6 +29,7 @@ $(document).ready(function () {
         event.preventDefault();
         q2Obj.ans = "yes"
         $("#Q3").show();
+        $("#Q2").hide();
     });
 
     $("#no").on("click", function (event) {
@@ -40,6 +44,7 @@ $(document).ready(function () {
         userDataObj.currentAverage = this.value
         console.log(userDataObj)
         $("#Q4").show();
+        $("#Q3").hide();
     });
 
     // Q4 cycleday
@@ -68,8 +73,7 @@ $(document).ready(function () {
         //do you know your average?
         //what is your average cycle length?
         //what day on your cycle are you?
-        // var q5initOnPeriod = $("#q5").val().trim();
-        // var q6initDaysSinceP = $("#q6").val().trim();
+
         const today = moment();
         let nextDay1
         let actualDay1
