@@ -64,15 +64,10 @@ $(document).ready(function () {
     }
     function createData(newUserObj1, q2Obj1, userDataObj1) {
         event.preventDefault();
-
         newUserObj1.firstName = $("#firstName").val().trim();
         newUserObj1.lastName = $("#lastName").val().trim();
         newUserObj1.email = $("#email").val().trim();
         localStorage.setItem("email", newUserObj1.email);
-
-        //do you know your average?
-        //what is your average cycle length?
-        //what day on your cycle are you?
 
         const today = moment();
         let nextDay1
