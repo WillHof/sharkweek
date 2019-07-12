@@ -15,7 +15,7 @@ $(document).ready(function () {
         // localStorage.setItem("firstName", $("#firstName").val())
 
         function checkLogin(userLoginData) {
-            $.post("/api/checkLogin/:email", userLoginData.email)
+            $.post("/api/checkLogin", userLoginData)
         }
 
         checkLogin(userLoginData)

@@ -30,25 +30,17 @@ module.exports = function (app) {
             res.json(dbUserData)
         })
     });
-    // app.get("/api/checkLogin", function (req, res) {
-    //     console.log(req.body)
-    //     db.User.findAll({
-    //         where: {
-    //             email: req.body.email
-    //         }
-    //     }).then(function (dbUser) {
-    //         res.json(dbUser);
-    //     });
-    // });
 
-    app.post("/api/checkLogin/:email", function (req, res) {
+    app.post("/api/checkLogin", function (req, res) {
         db.User.findOne({
             where: {
-                email: req.params.email
+                email: req.body.email
             }
         }).then(function (data) {
             console.log(data)
+            req.session.email = data.email
         })
+
     });
 
 }
