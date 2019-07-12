@@ -54,7 +54,7 @@ module.exports = function (app) {
         }).then(results => {
             if (results) {
                 console.log("got results")
-                res.redirect(path.join(__dirname, "/home.html"))
+                res.redirect(path.join(__dirname, "./home.html"))
             }
             else {
                 console.log("no matches")
