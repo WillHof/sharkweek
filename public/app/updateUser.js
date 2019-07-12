@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     $("#upToDate").hide();
     $("#submitUpdate").hide();
     $("#q2").hide();
@@ -36,7 +35,6 @@ $(document).ready(function () {
         $("#q2").hide();
         $("#upToDate").show();
     });
-
 
     logincheck()
     getHistory()
