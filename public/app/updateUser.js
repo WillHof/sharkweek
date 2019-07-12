@@ -38,11 +38,7 @@ $(document).ready(function () {
         })
     })
     //gets the access token from google using the code 
-    function getToken(code) {
-        $.post("/token", code, function (data) {
-            console.log(data)
-        })
-    }
+
     $("#submitUpdate").on("click", function (event) {
         event.preventDefault();
         let json = JSON.parse(localStorage.getItem("user"))

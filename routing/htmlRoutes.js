@@ -1,5 +1,5 @@
 const path = require("path");
-const url = require("../server.js")
+const url = require("../server.js").url
 const { google } = require("googleapis");
 const oauth2Client = new google.auth.OAuth2(
     process.env.GClientID,
@@ -26,11 +26,13 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/createaccount.html"))
     });
     app.get("/home", async function (req, res) {
-        console.log(process.env.GClientID)
-        console.log(req.query.code)
         if (req.query.code) {
             const { tokens } = await oauth2Client.getToken(req.query.code)
             oauth2Client.setCredentials(tokens);
+            fs.writeFile("../lib/token.json", JSON.stringify(tokens), (err) => {
+                if (err) return console.error(err);
+                console.log('Token stored to', "token.json");
+            });
         }
         res.sendFile(path.join(__dirname, "../public/home.html")
         )

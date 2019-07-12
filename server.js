@@ -25,7 +25,7 @@ const url = oauth2Client.generateAuthUrl({
     access_type: 'offline',
     scope: scopes
 })
-module.exports = url
+module.exports = { url, scopes, oauth2Client }
 // Routes
 require("./routing/htmlRoutes")(app);
 require("./routing/apiRoutes")(app);
