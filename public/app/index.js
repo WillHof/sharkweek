@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-    function checkLogin(email) {
-        $.get("/api/checkLogin/:email", email)
-    }
-
     $("#loginToAccount").on("click", function (event) {
         event.preventDefault();
         console.log("button clicked")
@@ -15,8 +11,12 @@ $(document).ready(function () {
 
         console.log(userLoginData.email)
 
-        localStorage.setItem("email", $("#email").val())
-        localStorage.setItem("firstName", $("#firstName").val())
+        // localStorage.setItem("email", $("#email").val())
+        // localStorage.setItem("firstName", $("#firstName").val())
+
+        function checkLogin(userLoginData) {
+            $.post("/api/checkLogin/:email", userLoginData.email)
+        }
 
         checkLogin(userLoginData)
 
