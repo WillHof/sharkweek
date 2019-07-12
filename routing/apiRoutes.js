@@ -36,7 +36,15 @@ module.exports = function (app) {
             where: {
                 email: req.body.email
             }
-        })
-        res.sendFile(path.join(__dirname, "../public/home.html"))
+        }).then(results => {
+            if (results) {
+                res.sendFile(path.join(__dirname, "../public/home.html"))
+            }
+            else {
+                res.sendFile(path.join(__dirname, "../public/index.html"))
+            }
+        }
+        )
+
     });
 };

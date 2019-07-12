@@ -13,12 +13,12 @@ $(document).ready(function () {
             email: $("#email").val()
         };
 
-        console.log(userLoginData)
+
 
         localStorage.setItem("email", $("#email").val())
         localStorage.setItem("firstName", $("#firstName").val())
 
-        checkLogin(localStorage.getItem.email)
+        checkLogin($("#email").val())
 
     });
 
