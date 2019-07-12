@@ -1,5 +1,5 @@
 var db = require("../models");
-
+const path = require("path")
 module.exports = function (app) {
 
     app.post("/api/createAccount", function (req, res) {
@@ -23,20 +23,29 @@ module.exports = function (app) {
                 email: req.body.email
             }
         }).then(dbUserData => res.json(dbUserData))
-    })
+    });
     app.post("/api/updateAccountData", function (req, res) {
         console.log(req.body);
         db.Update.create(req.body).then(function (dbUserData) {
             res.json(dbUserData)
         })
-    })
+    });
+
     app.post("/api/checkLogin", function (req, res) {
-        console.log(req.body)
-        db.Update.findAll({
+        db.User.findOne({
             where: {
                 email: req.body.email
             }
-        })
-        res.sendFile(path.join(__dirname, "../public/home.html"))
+        }).then(results => {
+            if (results) {
+                res.sendFile(path.join(__dirname, "../public/home.html"))
+            }
+            else {
+                res.sendFile(path.join(__dirname, "../public/index.html"))
+            }
+        }
+        )
+
     });
-};
+
+}
