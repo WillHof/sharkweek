@@ -9,7 +9,7 @@ $(document).ready(function () {
             email: $("#email").val()
         };
 
-
+        localStorage.setItem("email", $("#email".val()))
         function checkLogin(userLoginData) {
             $.post("/api/checkLogin", userLoginData)
         }
