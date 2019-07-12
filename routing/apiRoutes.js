@@ -30,13 +30,16 @@ module.exports = function (app) {
             res.json(dbUserData)
         })
     })
-    app.post("/api/checkLogin", function (req, res) {
+    app.get("/api/checkLogin", function (req, res) {
         console.log(req.body)
-        db.Update.findAll({
+        db.User.findAll({
             where: {
                 email: req.body.email
             }
-        })
-        res.sendFile(path.join(__dirname, "../public/home.html"))
+        }).then(function (dbUser) {
+            res.json(dbUser);
+        });
     });
-};
+
+
+}
