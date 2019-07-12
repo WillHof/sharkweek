@@ -58,6 +58,7 @@
         </div>
 
         <div id="q2">
+
             <h3><strong>Update Your Cycle (Q2)</strong></h3>
             <h4>IF YES: How many days ago did your period start?</h4>
 
@@ -65,20 +66,26 @@
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">Days</label>
                 </div>
-                <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Choose...</option>
-                    <option id="1" class="pday" value="1">1</option>
-                    <option id="2" class="pday" value="2">2</option>
-                    <option id="3" class="pday" value="3">3</option>
-                    <option id="4" class="pday" value="4">4</option>
-                    <option id="5" class="pday" value="5">5</option>
-                    <option id="6" class="pday" value="6">6</option>
-                    <option id="7" class="pday" value="7">7</option>
-                    <option id="8" class="pday" value="8">8</option>
-                    <option id="9" class="pday" value="9">9</option>
-                    <option id="10" class="pday" value="10">10</option>
-                </select>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Day
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item pday" type="button" value=1>1</button>
+                        <button class="dropdown-item pday" type="button" value=2>2</button>
+                        <button class="dropdown-item pday" type="button" value=3>3</button>
+                        <button class="dropdown-item pday" type="button" value=4>4</button>
+                        <button class="dropdown-item pday" type="button" value=5>5</button>
+                        <button class="dropdown-item pday" type="button" value=6>6</button>
+                        <button class="dropdown-item pday" type="button" value=7>7</button>
+                        <button class="dropdown-item pday" type="button" value=8>8</button>
+                        <button class="dropdown-item pday" type="button" value=9>9</button>
+                        <button class="dropdown-item pday" type="button" value=10>10</button>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <br>
@@ -88,6 +95,13 @@
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitUpdate"><i class="fa fa-check-circle"
                 aria-hidden="true"></i>
             Submit</button>
+
+
+        <br>
+
+        <div id="upToDate">
+            <h3><strong>Congratulations, your Sharkweek Cycle Tracker is up to Date!</strong></h3>
+        </div>
 
     </div>
 

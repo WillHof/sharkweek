@@ -55,7 +55,6 @@ $(document).ready(function () {
         $("#submit").show();
     });
 
-
     function upsertUser(userData) {
         $.post("/api/createAccount", userData)
     }

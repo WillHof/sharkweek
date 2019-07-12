@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+    $("#upToDate").hide();
     $("#submitUpdate").hide();
     $("#q2").hide();
 
@@ -19,24 +21,21 @@ $(document).ready(function () {
         event.preventDefault();
         userUpdateObj.onP = "no"
         console.log(userUpdateObj)
-        $("#submitUpdate").show();
+        // $("#submitUpdate").show();
         $("#q1").hide();
+        $("#upToDate").show();
     });
 
     // q2 pday
-    $(".inputGroupSelect01").on("click", function (event) {
+    $(".pday").on("click", function (event) {
         event.preventDefault();
-        console.log("clicked")
-        userUpdateObj.pDay = (".pday").value
+        userUpdateObj.pday = this.value
         console.log(userUpdateObj)
-        $("#submitUpdate").show();
+        // $("#submitUpdate").show();
+        $("#q1").hide();
         $("#q2").hide();
+        $("#upToDate").show();
     });
-
-
-
-
-
 
 
     logincheck()
