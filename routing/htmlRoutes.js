@@ -6,7 +6,7 @@ const oauth2Client = new google.auth.OAuth2(
     process.env.GSecret,
     "https://sharkweek-54.herokuapp.com/home"
 );
-
+const db = require("../models")
 
 module.exports = function (app) {
     app.get("/url", function (req, res) {
@@ -45,5 +45,21 @@ module.exports = function (app) {
     app.get("/purchase", function (req, res) {
         console.log(req.session.user)
         res.sendFile(path.join(__dirname, "../public/purchase.html"))
+    });
+    app.post("/checkLogin", function (req, res) {
+        db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then(results => {
+            if (results) {
+                console.log("got results")
+                res.redirect(path.join(__dirname, "../public/home.html"))
+            }
+            else {
+                console.log("no matches")
+                res.redirect(path.join(__dirname, "../public/index.html"))
+            }
+        });
     });
 }

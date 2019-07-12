@@ -31,21 +31,6 @@ module.exports = function (app) {
         })
     });
 
-    app.post("/api/checkLogin", function (req, res) {
-        db.User.findOne({
-            where: {
-                email: req.body.email
-            }
-        }).then(results => {
-            if (results) {
-                res.sendFile(path.join(__dirname, "../public/home.html"))
-            }
-            else {
-                res.sendFile(path.join(__dirname, "../public/index.html"))
-            }
-        }
-        )
 
-    });
 
 }
