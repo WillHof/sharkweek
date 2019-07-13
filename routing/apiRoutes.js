@@ -12,11 +12,13 @@ module.exports = function (app) {
             auth,
             calendarId: 'primary',
             resource: calEvent
-        }, (err, res) => {
+        }, (err, response) => {
             if (err) return console.log('The API returned an error: ' + err);
             else {
                 console.log('Event CreatedL %s', event.htmlLink);
             }
+        }).then(function (gResponse) {
+            res.json(gResponse)
         });
     });
     app.post("/api/createAccount", function (req, res) {
