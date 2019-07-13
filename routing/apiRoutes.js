@@ -20,7 +20,6 @@ module.exports = function (app) {
                 callback(oAuthClient)
             });
         }
-        const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
         function addEvent(auth) {
             console.log("addEvent begin")
             const calendar = google.calendar({ version: 'v3', auth });
