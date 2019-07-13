@@ -82,45 +82,10 @@ $(document).ready(function () {
         let length = json.length - 1
         let timeframe = json[length].timeframe + 1
     })
-    function pushEvent(auth, calEvent) {
-        const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
-        calendar.events.insert({
-            auth,
-            calendarId: 'primary',
-            resource: calEvent
-        }, (err, res) => {
-            if (err) return console.log('The API returned an error: ' + err);
-            else {
-                console.log('Event CreatedL %s', event.htmlLink);
-            }
-        });
-    }
+
     $("#gCal").on("click", function (event) {
         event.preventDefault();
-        let calEvent = {
-            'summary': 'Estimated Period Start',
-            'start': {
-                'dateTime': '2019-07-10T17:00:00-07:00',
-                'timeZone': 'America/Boston',
-            },
-            'end': {
-                'dateTime': '2019-07-15T17:00:00-07:00',
-                'timeZone': 'America/Boston',
-            },
-            'recurrence': [
-                'RRULE:FREQ=MONTHLY;COUNT=1'
-            ],
-            'attendees': [
-                { 'email': 'thehorrorofkurtz@gmail.com' },
-            ],
-            'reminders': {
-                'useDefault': false,
-                'overrides': [
-                    { 'method': 'email', 'minutes': 24 * 60 },
-                ],
-            },
-        }
-        $.post("/api/calendar", calEvent).then(response => console.log(response))
+        $.post("/api/calendar", localStorage.getItem("email")).then(response => console.log(response))
         // pushEvent(auth, calEvent)
     })
 })
