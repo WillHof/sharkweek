@@ -7,6 +7,7 @@ const oauth2Client = new google.auth.OAuth2(
     "https://sharkweek-54.herokuapp.com/home"
 );
 const db = require("../models")
+const fs = require("fs")
 
 module.exports = function (app) {
     app.get("/url", function (req, res) {
@@ -54,11 +55,11 @@ module.exports = function (app) {
         }).then(results => {
             if (results) {
                 console.log("got results")
-                res.redirect(path.join(__dirname, "../../home.html"))
+                res.sendFile(path.join(__dirname, "../public/home.html"))
             }
             else {
                 console.log("no matches")
-                res.redirect(path.join(__dirname, "../public/index.html"))
+                res.sendFile(path.join(__dirname, "../public/index.html"))
             }
         });
     });
