@@ -7,11 +7,9 @@ const server = require("../server.js")
 module.exports = function (app) {
 
     app.post("/api/calendar", function (req, res) {
-        fs.readFile('credentials.json', (err, content) => {
-            if (err) return console.log('Error loading client secret file:', err);
-            // Authorize a client with credentials, then call the Google Calendar API.
-            authorize(JSON.parse(content), addEvent);
-        });
+        authorize(server.oauth2Client, addEvent)
+
+
         function authorize(credentials, callback) {
             let oAuthClient = server.oauth2Client
             fs.readFile("token.json", (err, token) => {
@@ -44,12 +42,11 @@ module.exports = function (app) {
                 ]
             };
 
-            console.log(event)
 
             calendar.events.insert({
                 'calendarId': 'primary',
                 'resource': event
-            }, (err, res) => {
+            }, (err, gRes) => {
                 if (err) {
                     return console.log('The API returned an error: ' + err);
                 }
@@ -59,9 +56,9 @@ module.exports = function (app) {
                 }
             });
 
-        }
-    }
-    );
+        };
+    });
+
     app.post("/api/createAccount", function (req, res) {
         // Create a new User with the data available to us in req.body
         console.log(req.body);
