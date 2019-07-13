@@ -3,31 +3,34 @@ const path = require("path");
 const { google } = require("googleapis");
 const fs = require("fs");
 require("dotenv").config()
+const server = require("../server.js")
 module.exports = function (app) {
+
     app.post("/api/calendar", function (req, res) {
+        function authorize(credentials, callback) {
+            let oAuthClient = server.oauth2Client
+            fs.readFile("token.json", (err, token) => {
+                if (err) return console.log("not logged in");
+                oAuthClient.setCredentials(JSON.parse(token));
+                console.log(JSON.parse(token))
+                callback(JSON.parse(token), addEvent)
+            });
+        }
         const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
-        let auth = fs.readFile("token.json", function (err, data) {
-            if (err) throw err
-            else {
-                console.log(data)
-                return data
-            }
-        })
-        console.log(auth)
-        console.log(process.env.GAPIKey)
-        calendar.events.insert({
-            auth,
-            calendarId: 'primary',
-            resource: req.body
-        }, (err, response) => {
-            if (err) return console.log('The API returned an error: ' + err);
-            else {
-                console.log('Event CreatedL %s', event.htmlLink);
-            }
-        }).then(function (gResponse) {
-            res.json(gResponse)
-        });
-    });
+        function addEvent(auth) {
+            calendar.events.insert({
+                auth,
+                calendarId: 'primary',
+                resource: req.body
+            }, (err, response) => {
+                if (err) return console.log('The API returned an error: ' + err);
+                else {
+                    console.log('Event CreatedL %s', event.htmlLink);
+                }
+            })
+        }
+    }
+    );
     app.post("/api/createAccount", function (req, res) {
         // Create a new User with the data available to us in req.body
         console.log(req.body);
