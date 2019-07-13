@@ -7,27 +7,59 @@ const server = require("../server.js")
 module.exports = function (app) {
 
     app.post("/api/calendar", function (req, res) {
+        fs.readFile('credentials.json', (err, content) => {
+            if (err) return console.log('Error loading client secret file:', err);
+            // Authorize a client with credentials, then call the Google Calendar API.
+            authorize(JSON.parse(content), addEvent);
+        });
         function authorize(credentials, callback) {
             let oAuthClient = server.oauth2Client
             fs.readFile("token.json", (err, token) => {
                 if (err) return console.log("not logged in");
                 oAuthClient.setCredentials(JSON.parse(token));
-                console.log(JSON.parse(token))
-                callback(JSON.parse(token), addEvent)
+                callback(oAuthClient)
             });
         }
         const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
         function addEvent(auth) {
+            console.log("addEvent begin")
+            const calendar = google.calendar({ version: 'v3', auth });
+            var event = {
+                'summary': "Appointment test",
+                'location': "Somewhere",
+                'start': {
+                    "date": "2019-06-01"
+                },
+                'end': {
+                    "date": "2019-06-02"
+                },
+                'recurrence': [
+                    "EXDATE;VALUE=DATE:20190610",
+                    "RDATE;VALUE=DATE:20190609,20190611",
+                    "RRULE:FREQ=DAILY;UNTIL=20190628;INTERVAL=3"
+                ],
+                'attendees': [
+                    {
+                        "email": "tessthemess88@gmail.com"
+                    }
+                ]
+            };
+
+            console.log(event)
+
             calendar.events.insert({
-                auth,
-                calendarId: 'primary',
-                resource: req.body
-            }, (err, response) => {
-                if (err) return console.log('The API returned an error: ' + err);
-                else {
-                    console.log('Event CreatedL %s', event.htmlLink);
+                'calendarId': 'primary',
+                'resource': event
+            }, (err, res) => {
+                if (err) {
+                    return console.log('The API returned an error: ' + err);
                 }
-            })
+
+                else {
+                    console.log('no error.');
+                }
+            });
+
         }
     }
     );
