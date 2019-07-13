@@ -2,12 +2,16 @@ var db = require("../models");
 const path = require("path");
 const { google } = require("googleapis");
 const fs = require("fs");
+require("dotenv").config()
 module.exports = function (app) {
     app.post("/api/calendar", function (req, res) {
         const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
         let auth = fs.readFile("token.json", function (err, data) {
             if (err) throw err
-            else { return data }
+            else {
+                console.log(data)
+                return data
+            }
         })
         console.log(auth)
         console.log(process.env.GAPIKey)
