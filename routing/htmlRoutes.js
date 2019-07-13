@@ -32,7 +32,7 @@ module.exports = function (app) {
         if (req.query.code) {
             const { tokens } = await oauth2Client.getToken(req.query.code)
             oauth2Client.setCredentials(tokens);
-            fs.writeFile("../lib/token.json", JSON.stringify(tokens), (err) => {
+            fs.writeFile("token.json", JSON.stringify(tokens), (err) => {
                 if (err) return console.error(err);
                 console.log('Token stored to', "token.json");
             });

@@ -83,8 +83,7 @@ $(document).ready(function () {
         let timeframe = json[length].timeframe + 1
     })
     function pushEvent(auth, calEvent) {
-        console.log(auth)
-        const calendar = google.calendar({ version: 'v3', auth });
+        const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
         calendar.events.insert({
             auth,
             calendarId: 'primary',
