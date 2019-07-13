@@ -21,6 +21,7 @@ $(document).ready(function () {
     $("#soFam").on("click", function (event) {
         event.preventDefault();
         newUserObj.userType = "soFam"
+        $("#Q1").hide();
         $("#submit").show();
     });
 
@@ -56,11 +57,20 @@ $(document).ready(function () {
         $("#submit").show();
     });
 
+    function nextPage() {
+        if (newUserObj.userType === "soFam") {
+            window.location.href = "./sofamhome"
+        }
+        else {
+            window.location.href = "./home"
+        }
+    }
+
     function upsertUser(userData) {
         $.post("/api/createAccount", userData)
     }
     function upsertUserData(userUpdate) {
-        $.post("/api/createAccountData", userUpdate).then(window.location.href = "./home")
+        $.post("/api/createAccountData", userUpdate).then(nextPage())
     }
     function createData(newUserObj1, q2Obj1, userDataObj1) {
         event.preventDefault();
