@@ -82,44 +82,44 @@ $(document).ready(function () {
         let length = json.length - 1
         let timeframe = json[length].timeframe + 1
     })
-})
-function pushEvent(auth, calEvent) {
-    const calendar = google.calendar({ version: 'v3', auth });
-    calendar.events.insert({
-        auth,
-        calendarId: 'primary',
-        resource: calEvent
-    }, (err, res) => {
-        if (err) return console.log('The API returned an error: ' + err);
-        else {
-            console.log('Event CreatedL %s', event.htmlLink);
-        }
-    });
-}
-$("#gCal").on("click", function (event) {
-    event.preventDefault();
-    let calEvent = {
-        'summary': 'Estimated Period Start',
-        'start': {
-            'dateTime': '2015-05-28T09:00:00-07:00',
-            'timeZone': 'America/Boston',
-        },
-        'end': {
-            'dateTime': '2015-05-28T17:00:00-07:00',
-            'timeZone': 'America/Boston',
-        },
-        'recurrence': [
-            'RRULE:FREQ=DAILY;COUNT=2'
-        ],
-        'attendees': [
-            { 'email': 'thehorrorofkurtz@gmail.com' },
-        ],
-        'reminders': {
-            'useDefault': false,
-            'overrides': [
-                { 'method': 'email', 'minutes': 24 * 60 },
-            ],
-        },
+    function pushEvent(auth, calEvent) {
+        const calendar = google.calendar({ version: 'v3', auth });
+        calendar.events.insert({
+            auth,
+            calendarId: 'primary',
+            resource: calEvent
+        }, (err, res) => {
+            if (err) return console.log('The API returned an error: ' + err);
+            else {
+                console.log('Event CreatedL %s', event.htmlLink);
+            }
+        });
     }
-    pushEvent(auth, calEvent)
+    $("#gCal").on("click", function (event) {
+        event.preventDefault();
+        let calEvent = {
+            'summary': 'Estimated Period Start',
+            'start': {
+                'dateTime': '2015-05-28T09:00:00-07:00',
+                'timeZone': 'America/Boston',
+            },
+            'end': {
+                'dateTime': '2015-05-28T17:00:00-07:00',
+                'timeZone': 'America/Boston',
+            },
+            'recurrence': [
+                'RRULE:FREQ=DAILY;COUNT=2'
+            ],
+            'attendees': [
+                { 'email': 'thehorrorofkurtz@gmail.com' },
+            ],
+            'reminders': {
+                'useDefault': false,
+                'overrides': [
+                    { 'method': 'email', 'minutes': 24 * 60 },
+                ],
+            },
+        }
+        pushEvent(auth, calEvent)
+    })
 })
