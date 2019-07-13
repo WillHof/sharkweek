@@ -7,18 +7,15 @@ const server = require("../server.js")
 module.exports = function (app) {
 
     app.post("/api/calendar", function (req, res) {
-        // authorize(server.oauth2Client, addEvent).then(res.json("this worked"))
-        // function authorize(credentials, callback) {
-        //     let oAuthClient = server.oauth2Client
-        //     fs.readFile("token.json", (err, token) => {
-        //         if (err) return console.log("not logged in");
-        //         oAuthClient.setCredentials(JSON.parse(token));
-        //         callback(oAuthClient)
-        //     });
-        // }
-        //get this to pull user data
-        let oAuthClient = server.oauth2Client;
-        addEvent(oAuthClient).then(res.json("It Worked"))
+        authorize(server.oauth2Client, addEvent).then(res.json("this worked"))
+        function authorize(credentials, callback) {
+            let oAuthClient = server.oauth2Client
+            fs.readFile("token.json", (err, token) => {
+                if (err) return console.log("not logged in");
+                oAuthClient.setCredentials(JSON.parse(token));
+                callback(oAuthClient)
+            });
+        }
         function addEvent(auth) {
             console.log("addEvent begin")
             const calendar = google.calendar({ version: 'v3', auth });
@@ -42,7 +39,8 @@ module.exports = function (app) {
                     }
                 ]
             };
-            //what does this do
+
+
             calendar.events.insert({
                 'calendarId': 'primary',
                 'resource': event
