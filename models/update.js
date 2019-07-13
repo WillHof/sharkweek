@@ -32,8 +32,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DATE
         },
 
-        EventId: {
-            type: DataTypes.STRING
+        eventId: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
 
     });
