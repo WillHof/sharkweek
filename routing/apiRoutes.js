@@ -5,7 +5,6 @@ const fs = require("fs");
 require("dotenv").config()
 module.exports = function (app) {
     app.post("/api/calendar", function (req, res) {
-        console.log(req.body)
         const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
         let auth = fs.readFile("token.json", function (err, data) {
             if (err) throw err
