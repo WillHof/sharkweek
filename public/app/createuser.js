@@ -52,6 +52,7 @@ $(document).ready(function () {
         event.preventDefault();
         userDataObj.currentDay = this.value
         console.log(userDataObj)
+        $("#Q4").hide();
         $("#submit").show();
     });
 

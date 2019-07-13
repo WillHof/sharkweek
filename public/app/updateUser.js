@@ -1,13 +1,11 @@
 $(document).ready(function () {
 
     $("#upToDate").hide();
-    $("#submitUpdate").hide();
     $("#q2").hide();
 
     var userUpdateObj = {}
 
     // q1
-
     $("#yes").on("click", function (event) {
         event.preventDefault();
         userUpdateObj.onP = "yes"
@@ -20,7 +18,6 @@ $(document).ready(function () {
         event.preventDefault();
         userUpdateObj.onP = "no"
         console.log(userUpdateObj)
-        // $("#submitUpdate").show();
         $("#q1").hide();
         $("#upToDate").show();
     });
@@ -30,11 +27,11 @@ $(document).ready(function () {
         event.preventDefault();
         userUpdateObj.pday = this.value
         console.log(userUpdateObj)
-        // $("#submitUpdate").show();
         $("#q1").hide();
         $("#q2").hide();
         $("#upToDate").show();
     });
+
 
     logincheck()
     getHistory()
@@ -71,16 +68,6 @@ $(document).ready(function () {
         $.get("/url", function (data) {
             window.location.replace(data);
         })
-    })
-
-    $("#submitUpdate").on("click", function (event) {
-        event.preventDefault();
-        let json = JSON.parse(localStorage.getItem("user"))
-        let q1OnP = $("#q1").val();
-        let q2PStart = $("#q2").val()
-        let email = localStorage.getItem("email")
-        let length = json.length - 1
-        let timeframe = json[length].timeframe + 1
     })
 
     $("#gCal").on("click", function (event) {
