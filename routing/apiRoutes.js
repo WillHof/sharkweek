@@ -1,7 +1,24 @@
 var db = require("../models");
-const path = require("path")
+const path = require("path");
+const { google } = require("googleapis");
+const fs = require("fs");
 module.exports = function (app) {
-
+    app.post("/api/calendar", function (req, res) {
+        const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
+        let auth = JSON.parse(fs.readFile("token.json"))
+        console.log(auth)
+        console.log(process.env.GAPIKey)
+        calendar.events.insert({
+            auth,
+            calendarId: 'primary',
+            resource: calEvent
+        }, (err, res) => {
+            if (err) return console.log('The API returned an error: ' + err);
+            else {
+                console.log('Event CreatedL %s', event.htmlLink);
+            }
+        });
+    });
     app.post("/api/createAccount", function (req, res) {
         // Create a new User with the data available to us in req.body
         console.log(req.body);

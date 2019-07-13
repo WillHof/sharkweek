@@ -100,15 +100,15 @@ $(document).ready(function () {
         let calEvent = {
             'summary': 'Estimated Period Start',
             'start': {
-                'dateTime': '2015-05-28T09:00:00-07:00',
+                'dateTime': '2019-07-10T17:00:00-07:00',
                 'timeZone': 'America/Boston',
             },
             'end': {
-                'dateTime': '2015-05-28T17:00:00-07:00',
+                'dateTime': '2019-07-15T17:00:00-07:00',
                 'timeZone': 'America/Boston',
             },
             'recurrence': [
-                'RRULE:FREQ=DAILY;COUNT=2'
+                'RRULE:FREQ=MONTHLY;COUNT=1'
             ],
             'attendees': [
                 { 'email': 'thehorrorofkurtz@gmail.com' },
@@ -120,6 +120,7 @@ $(document).ready(function () {
                 ],
             },
         }
-        pushEvent(auth, calEvent)
+        $.post("/api/calendar", calEvent).then(response => console.log(response))
+        // pushEvent(auth, calEvent)
     })
 })
