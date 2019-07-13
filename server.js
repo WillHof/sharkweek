@@ -34,7 +34,7 @@ const url = oauth2Client.generateAuthUrl({
     access_type: 'offline',
     scope: scopes
 })
-module.exports = url
+module.exports = { url, scopes, oauth2Client }
 // Routes
 require("./routing/htmlRoutes")(app);
 require("./routing/apiRoutes")(app);
@@ -55,7 +55,7 @@ db.sequelize
 
 // starting our Express app/db
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });

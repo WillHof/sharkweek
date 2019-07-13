@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     $("#upToDate").hide();
     $("#submitUpdate").hide();
     $("#q2").hide();
@@ -36,7 +35,6 @@ $(document).ready(function () {
         $("#q2").hide();
         $("#upToDate").show();
     });
-
 
     logincheck()
     getHistory()
@@ -74,12 +72,7 @@ $(document).ready(function () {
             window.location.replace(data);
         })
     })
-    //gets the access token from google using the code 
-    function getToken(code) {
-        $.post("/token", code, function (data) {
-            console.log(data)
-        })
-    }
+
     $("#submitUpdate").on("click", function (event) {
         event.preventDefault();
         let json = JSON.parse(localStorage.getItem("user"))
@@ -88,5 +81,11 @@ $(document).ready(function () {
         let email = localStorage.getItem("email")
         let length = json.length - 1
         let timeframe = json[length].timeframe + 1
+    })
+
+    $("#gCal").on("click", function (event) {
+        event.preventDefault();
+        $.post("/api/calendar", localStorage.getItem("email")).then(response => console.log(response))
+        // pushEvent(auth, calEvent)
     })
 })
