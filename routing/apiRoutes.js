@@ -7,9 +7,7 @@ const server = require("../server.js")
 module.exports = function (app) {
 
     app.post("/api/calendar", function (req, res) {
-        authorize(server.oauth2Client, addEvent)
-
-
+        authorize(server.oauth2Client, addEvent).then(res.json("this worked"))
         function authorize(credentials, callback) {
             let oAuthClient = server.oauth2Client
             fs.readFile("token.json", (err, token) => {
@@ -25,19 +23,19 @@ module.exports = function (app) {
                 'summary': "Appointment test",
                 'location': "Somewhere",
                 'start': {
-                    "date": "2019-06-01"
+                    "date": "2019-07-01"
                 },
                 'end': {
-                    "date": "2019-06-02"
+                    "date": "2019-07-02"
                 },
                 'recurrence': [
                     "EXDATE;VALUE=DATE:20190610",
                     "RDATE;VALUE=DATE:20190609,20190611",
-                    "RRULE:FREQ=DAILY;UNTIL=20190628;INTERVAL=3"
+                    "RRULE:FREQ=DAILY;UNTIL=20190728;INTERVAL=3"
                 ],
                 'attendees': [
                     {
-                        "email": "tessthemess88@gmail.com"
+                        "email": "thehorrorofkurtz@gmail.com"
                     }
                 ]
             };
