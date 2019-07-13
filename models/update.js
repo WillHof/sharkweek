@@ -30,6 +30,10 @@ module.exports = function (sequelize, DataTypes) {
 
         actualLastDate: {
             type: DataTypes.DATE
+        },
+
+        EventId: {
+            type: DataTypes.STRING
         }
 
     });
