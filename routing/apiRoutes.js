@@ -5,7 +5,10 @@ const fs = require("fs");
 module.exports = function (app) {
     app.post("/api/calendar", function (req, res) {
         const calendar = google.calendar({ 'version': 'v3', 'auth': process.env.GAPIKey });
-        let auth = JSON.parse(fs.readFile("token.json"))
+        let auth = fs.readFile("token.json", function (err, data) {
+            if (err) throw err
+            else { return data }
+        })
         console.log(auth)
         console.log(process.env.GAPIKey)
         calendar.events.insert({
