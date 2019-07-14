@@ -19,9 +19,13 @@ module.exports = function (app) {
                 callback(oAuthClient)
             });
         }
-        function createEventObject(user) {
+
+
+        function addEvent(auth) {
+            const email = req.body;
+            const calendar = google.calendar({ version: 'v3', auth });
             db.Update.findAll({
-                where: user
+                where: email
             }).then(data => {
                 let recentData = data[data.length - 1].dataValues;
                 let predictedEarly = moment(recentData.nextPredictedDateOne).subtract(2, 'days').format();
@@ -46,25 +50,19 @@ module.exports = function (app) {
                             'email': 'thehorrorofkurtz@gmail.com'
                         }
                     ]
-                }
-                return event
+                };
+                calendar.events.insert({
+                    'calendarId': 'primary',
+                    'resource': event
+                }, (err, gRes) => {
+                    if (err) {
+                        return console.log('The API returned an error: ' + err);
+                    }
+                    else {
+                        console.log(gRes);
+                    }
+                });
             })
-        }
-        async function addEvent(auth) {
-            const email = req.body;
-            let event = await createEventObject(email)
-            const calendar = google.calendar({ version: 'v3', auth });
-            calendar.events.insert({
-                'calendarId': 'primary',
-                'resource': event
-            }, (err, gRes) => {
-                if (err) {
-                    return console.log('The API returned an error: ' + err);
-                }
-                else {
-                    console.log(gRes);
-                }
-            });
         };
     });
 
