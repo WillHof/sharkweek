@@ -9,7 +9,7 @@ module.exports = function (app) {
 
     app.post("/api/calendar", function (req, res) {
 
-        authorize(server.oauth2Client, addEvent).then(res.json("this worked"))
+        authorize(server.oauth2Client, addEvent)
         //can resuse authorize function with other callbacks
         function authorize(credentials, callback) {
             let oAuthClient = server.oauth2Client
@@ -43,12 +43,7 @@ module.exports = function (app) {
                         `RRULE:FREQ=DAILY;UNTIL=20200128;INTERVAL=${recentData.currentAverage}`
                     ],
                     'attendees': [
-                        {
-                            user
-                        },
-                        {
-                            'email': 'thehorrorofkurtz@gmail.com'
-                        }
+                        email
                     ]
                 };
                 calendar.events.insert({
@@ -59,7 +54,7 @@ module.exports = function (app) {
                         return console.log('The API returned an error: ' + err);
                     }
                     else {
-                        console.log(gRes);
+                        res.json(gRes);
                     }
                 });
             })
