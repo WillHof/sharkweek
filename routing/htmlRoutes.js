@@ -34,7 +34,7 @@ module.exports = function (app) {
             oauth2Client.setCredentials(tokens);
             fs.writeFile("token.json", JSON.stringify(tokens), (err) => {
                 if (err) return console.error(err);
-                console.log('Token stored to', "token.json");
+                res.JSON('Token stored to token.json');
             });
         }
         res.sendFile(path.join(__dirname, "../public/home.html")
