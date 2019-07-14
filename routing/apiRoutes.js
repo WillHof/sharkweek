@@ -28,8 +28,8 @@ module.exports = function (app) {
                 where: email
             }).then(data => {
                 let recentData = data[data.length - 1].dataValues;
-                let predictedEarly = moment(recentData.nextPredictedDateOne).subtract(2, 'days').format();
-                let predictedLate = moment(recentData.nextPredictedDateOne).add(2, 'days').format();
+                let predictedEarly = moment(recentData.nextPredictedDateOne).subtract(2, 'days').format('YYYY-MM-DD');
+                let predictedLate = moment(recentData.nextPredictedDateOne).add(2, 'days').format('YYYY-MM-DD');
                 let event = {
                     'summary': 'Blood in the Water',
                     'location': 'Down South',
