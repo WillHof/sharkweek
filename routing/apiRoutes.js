@@ -8,9 +8,9 @@ const moment = require("moment")
 module.exports = function (app) {
 
     app.post("/api/calendar", function (req, res) {
-        authorize(server.oauth2Client, addEvent).then(res.json("this worked"))
-        createEventObject(req.body)
 
+        authorize(server.oauth2Client, addEvent).then(res.json("this worked"))
+        //can resuse authorize function with other callbacks
         function authorize(credentials, callback) {
             let oAuthClient = server.oauth2Client
             fs.readFile("token.json", (err, token) => {
@@ -50,19 +50,19 @@ module.exports = function (app) {
                 return event
             })
         }
-        function addEvent(auth) {
-            console.log("addEvent begin")
+        async function addEvent(auth) {
             const email = req.body;
+            let event = await createEventObject(email)
             const calendar = google.calendar({ version: 'v3', auth });
             calendar.events.insert({
                 'calendarId': 'primary',
-                'resource': createEventObject(email)
+                'resource': event
             }, (err, gRes) => {
                 if (err) {
                     return console.log('The API returned an error: ' + err);
                 }
                 else {
-                    console.log('no error.');
+                    console.log(gRes);
                 }
             });
         };
