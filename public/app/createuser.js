@@ -9,13 +9,13 @@ $(document).ready(function () {
     var newUserObj = {}
     var q2Obj = {}
     var userDataObj = {}
+
     $("#mainUser").on("click", function (event) {
         event.preventDefault();
         newUserObj.userType = "mainUser"
         $("#Q2").show();
         $("#Q0").hide();
         $("#Q1").hide();
-
     });
 
     $("#soFam").on("click", function (event) {
