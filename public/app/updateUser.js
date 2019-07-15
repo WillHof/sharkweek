@@ -1,13 +1,11 @@
 $(document).ready(function () {
 
     $("#upToDate").hide();
-    $("#submitUpdate").hide();
     $("#q2").hide();
 
     var userUpdateObj = {}
 
     // q1
-
     $("#yes").on("click", function (event) {
         event.preventDefault();
         userUpdateObj.onP = "yes"
@@ -20,7 +18,6 @@ $(document).ready(function () {
         event.preventDefault();
         userUpdateObj.onP = "no"
         console.log(userUpdateObj)
-        // $("#submitUpdate").show();
         $("#q1").hide();
         $("#upToDate").show();
     });
@@ -30,11 +27,11 @@ $(document).ready(function () {
         event.preventDefault();
         userUpdateObj.pday = this.value
         console.log(userUpdateObj)
-        // $("#submitUpdate").show();
         $("#q1").hide();
         $("#q2").hide();
         $("#upToDate").show();
     });
+
 
     logincheck()
     getHistory()
@@ -73,6 +70,7 @@ $(document).ready(function () {
         })
     })
 
+<<<<<<< HEAD
     $("#submitUpdate").on("click", function (event) {
         event.preventDefault();
         let json = JSON.parse(localStorage.getItem("user"))
@@ -86,6 +84,8 @@ $(document).ready(function () {
         localStorage.removeItem("email");
         window.location.href = "./"
     })
+=======
+>>>>>>> 3de77bf6542712a2dcc63d04b23aef71f71f4fa2
     $("#gCal").on("click", function (event) {
         event.preventDefault();
         $.post("/api/calendar", { "email": localStorage.getItem("email") }).then(response => console.log(response))
