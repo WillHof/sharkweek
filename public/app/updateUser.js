@@ -102,9 +102,13 @@ $(document).ready(function () {
         })
     })
 
+    $("#logout").on("click", event => {
+        localStorage.removeItem("email");
+        window.location.href = "./"
+    })
     $("#gCal").on("click", function (event) {
         event.preventDefault();
-        $.post("/api/calendar", localStorage.getItem("email")).then(response => console.log(response))
+        $.post("/api/calendar", { "email": localStorage.getItem("email") }).then(response => console.log(response))
         // pushEvent(auth, calEvent)
     })
 })
