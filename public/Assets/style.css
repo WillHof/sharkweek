@@ -1,4 +1,4 @@
 body {
-    background-color: red; /* For browsers that do not support gradients */
-    background-image: linear-gradient( #e3f2fd, red); /* Standard syntax (must be last) */
+    background-color: red;
+    background-image: linear-gradient( #e3f2fd, red);
   }
