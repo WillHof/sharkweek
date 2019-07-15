@@ -22,6 +22,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         code: {
             type: DataTypes.INTEGER
+        },
+        sharedCode: {
+            type: DataTypes.INTEGER
         }
     });
 

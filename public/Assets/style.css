@@ -2,3 +2,6 @@ body {
     background-color: red;
     background-image: linear-gradient( #e3f2fd, red);
   }
+.off{
+display:none
+  }

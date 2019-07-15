@@ -95,7 +95,14 @@ $(document).ready(function () {
     })
     $("#shareCode").on("click", event => {
         event.preventDefault();
-        window.open("./code")
+        $("#codeShare").toggleClass("off")
+        let email = {
+            "email":
+                localStorage.getItem("email")
+        }
+        $.post("/api/getCode", email, data =>
+            $("#code").text(data)
+        );
     })
     $("#logout").on("click", event => {
         localStorage.removeItem("email");
