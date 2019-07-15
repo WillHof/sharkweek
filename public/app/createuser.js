@@ -79,8 +79,7 @@ $(document).ready(function () {
         newUserObj1.lastName = $("#lastName").val().trim();
         newUserObj1.email = $("#email").val().trim();
         localStorage.setItem("email", newUserObj1.email);
-
-        const today = moment();
+        newUserObj1.code = Math.floor(Math.random() * 10000)
         let nextDay1
         let actualDay1
         //Don't do anything if the name fields hasn't been filled out
@@ -91,13 +90,10 @@ $(document).ready(function () {
             userDataObj1.currentAverage = 28
             userDataObj1.currentDay = 14
         }
-        //can't use the today constant! it actually changes the moment object itself when we do moment.subtract/moment.add!
         actualDay1 = moment().subtract(userDataObj1.currentDay, "days").format()
-
         nextDay1 = moment().add((1 + (userDataObj1.currentAverage - userDataObj1.currentDay)), "days").format()
         // Calling the upsertUser function and passing in the value of the name input
         upsertUser(newUserObj1);
-        console.log(userDataObj1)
         upsertUserData({
             email: newUserObj1.email,
             timeframe: 0,
