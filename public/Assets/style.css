@@ -1,6 +1,7 @@
 body {
     background-color: red;
     background-image: linear-gradient( #e3f2fd, red);
+    min-height:calc(100vh)
   }
 .off{
 display:none
