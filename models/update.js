@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
 
         currentAverage: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
 
         currentDay: {
