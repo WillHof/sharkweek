@@ -2,3 +2,8 @@ body {
     background-color: red;
     background-image: linear-gradient( #e3f2fd, red);
   }
+
+#createaccountbody {
+  background-color: rgb(238, 145, 145);
+  background-image: none
+}
