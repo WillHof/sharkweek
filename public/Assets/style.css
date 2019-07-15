@@ -1,9 +1,5 @@
 body {
     background-color: red;
     background-image: linear-gradient( #e3f2fd, red);
+    min-height: calc(100vh);
   }
-
-#createaccountbody {
-  background-color: rgb(238, 145, 145);
-  background-image: none
-}
