@@ -73,7 +73,10 @@ $(document).ready(function () {
             window.location.replace(data);
         })
     })
-
+    $("#shareCode").on("click", event => {
+        event.preventDefault();
+        window.open("./code")
+    })
     $("#logout").on("click", event => {
         localStorage.removeItem("email");
         window.location.href = "./"

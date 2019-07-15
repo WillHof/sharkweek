@@ -14,14 +14,13 @@ module.exports = function (app) {
         res.send(url)
 
     });
-    app.get("/token", function (req, res) {
-
+    app.get("./code", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/code.html"))
     })
     app.get("/about", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/about.html"))
     });
     app.get("/", function (req, res) {
-        r
         res.sendFile(path.join(__dirname, "../public/index.html"))
     });
     app.get("/createAccount", function (req, res) {
