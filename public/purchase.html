@@ -10,6 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/purchase.css">
 </head>
 
 <body>
@@ -36,7 +37,116 @@
             </ul>
         </div>
     </nav>
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Buy necessities</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./Assets/tampon2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://www.amazon.com/s?k=tampons" class="btn btn-primary">Buy tampons</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./Assets/pads.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://www.amazon.com/s?k=pads+for+women+overnight" class="btn btn-primary">Buy
+                            Pads</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./Assets/ibuprofen.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://www.amazon.com/s?k=ibuprofen" class="btn btn-primary">Buy Ibuprofen</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./Assets/heatingpad.jfif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://www.amazon.com/s?k=reusable+heating+pad+for+menstrual&ref=nb_sb_noss"
+                            class="btn btn-primary">Buy a Heating Pad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+                <h2>Get comfortable!</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./Assets/cookies.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://insomniacookies.com/" class="btn btn-primary">Deliver cookies!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./Assets/wine.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://drizly.com/alcohol-delivery/ma/boston/re81" class="btn btn-primary">Deliver
+                            Booze! (21+ only)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./Assets/bath-bombs.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://www.lushusa.com/bath/bath-bombs/" class="btn btn-primary">Bath Bombs!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./Assets/ice cream.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="https://www.amazon.com/s?k=ice+cream" class="btn btn-primary">Ice Cream!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-header">
+                    Something not listed?
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Search below:</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="searchTerm" placeholder="Search powered by Amazon"
+                            aria-label="Amazon Search" aria-describedby="aSearch">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="aSearch">Go</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="./app/purchase.js"></script>
 </body>
 
 </html>
