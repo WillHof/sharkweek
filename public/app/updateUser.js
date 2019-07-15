@@ -70,9 +70,25 @@ $(document).ready(function () {
         })
     })
 
+<<<<<<< HEAD
+    $("#submitUpdate").on("click", function (event) {
+        event.preventDefault();
+        let json = JSON.parse(localStorage.getItem("user"))
+        let q1OnP = $("#q1").val();
+        let q2PStart = $("#q2").val()
+        let email = localStorage.getItem("email")
+        let length = json.length - 1
+        let timeframe = json[length].timeframe + 1
+    })
+    $("#logout").on("click", event => {
+        localStorage.removeItem("email");
+        window.location.href = "./"
+    })
+=======
+>>>>>>> 3de77bf6542712a2dcc63d04b23aef71f71f4fa2
     $("#gCal").on("click", function (event) {
         event.preventDefault();
-        $.post("/api/calendar", localStorage.getItem("email")).then(response => console.log(response))
+        $.post("/api/calendar", { "email": localStorage.getItem("email") }).then(response => console.log(response))
         // pushEvent(auth, calEvent)
     })
 })

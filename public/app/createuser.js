@@ -62,6 +62,7 @@ $(document).ready(function () {
     function upsertUserData(userUpdate) {
         $.post("/api/createAccountData", userUpdate).then(window.location.href = "./home")
     }
+
     function createData(newUserObj1, q2Obj1, userDataObj1) {
         event.preventDefault();
         newUserObj1.firstName = $("#firstName").val().trim();
