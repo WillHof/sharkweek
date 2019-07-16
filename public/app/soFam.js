@@ -58,4 +58,8 @@ $(document).ready(function () {
             window.location.href = "./"
         }
     }
+    $("#logout").on("click", event => {
+        localStorage.removeItem("email");
+        window.location.href = "./"
+    })
 })
