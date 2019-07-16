@@ -6,10 +6,19 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("button clicked")
         // Create an object for the user"s data
-        var userLoginData = {
-            firstName: $("#firstName").val(),
+        let email = {
             email: $("#email").val()
         };
+        $.post("/api/getAccountInfo", email, data => {
+            if (data[0].userType === "mainUser") {
+                window.location.href = "/home"
+            }
+            else if (data[0].userType === "soFam") {
+                window.location.href = "/sofamhome"
+            }
+            else (alert("Login email not found"))
+        }
+        )
 
         localStorage.setItem("email", $("#email").val())
         //     localStorage.setItem("firstName", $("#firstName").val())

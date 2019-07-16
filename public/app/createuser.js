@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Getting references to the name input and author container, as well as the table body
 
     $("#Q2").hide();
     $("#Q3").hide();
@@ -85,7 +84,7 @@ $(document).ready(function () {
         if (!newUserObj1.firstName) {
             return;
         }
-        if (q2Obj1.ans === "No") {
+        if (q2Obj1.ans === "no") {
             userDataObj1.currentAverage = 28
             userDataObj1.currentDay = 14
         }
