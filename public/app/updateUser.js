@@ -34,6 +34,11 @@ $(document).ready(function () {
         $("#upToDate").show();
     });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
     // function determineUpdate(userUpdateObj) {
     //     if (userUpdateObj.onP === "yes") {
     //         console.log("yes tree")
@@ -48,6 +53,13 @@ $(document).ready(function () {
     //     else {
     //         console.log("no updates necessary!")
     //     }
+<<<<<<< HEAD
+=======
+
+    // }
+
+
+>>>>>>> master
 
     // add update to Updates table
 

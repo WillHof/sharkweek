@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>createaccount</title>
+    <link rel="stylesheet" href="Assets/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -13,17 +14,17 @@
 
 </head>
 
-<body>
+<body id="createaccountbody">
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <a class="navbar-brand" href="#">
-            <img src="./Assets/Shark fin.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Shark Week
+            <img src="./Assets/logowide.png" width="220" height="75" class="d-inline-block align-top" alt="">
         </a>
     </nav>
 
     <div class="container" id="form">
         <div id="Q0">
-            <h2>Account Creation</h2>
+            <br>
+            <h2><strong>Account Creation</strong></h2>
             <hr>
             <h3><strong>About You</strong></h3>
             <h4>Your First Name (Required)</h4>
@@ -39,16 +40,17 @@
         </div>
 
         <div id="Q1">
-            <h3><strong>Question 1</strong></h3>
-            <h4>Are you the main user tracking your period, or will you be using this app to support a significant
+            <h4>Are you the main user tracking your period with this app, or will you be using this app to support a
+                significant
                 other/family member?</h4>
-            <button class="btn btn-info" id="mainUser" value="mainUser">MainUser</button>
+            <button class="btn btn-light" id="mainUser" value="mainUser">MainUser</button>
             <button class="btn btn-secondary" id="soFam" value="soFam">Significant Other/Family Member</button>
         </div>
 
         <div id="Q2">
-            <h3><strong>Question 2</strong></h3>
-            <h4>Do you know your average menstrual cycle length?</h4>
+            <br>
+            <br>
+            <h4>Do you know how many days long your current average menstrual cycle length is?</h4>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,8 +65,9 @@
         </div>
 
         <div id="Q3">
-            <h3><strong>Question 3</strong></h3>
-            <h4>How many days is your total average cycle length?
+            <br>
+            <br>
+            <h4>How many days long is your total average cycle length?
                 (The
                 length of time between the first day of your period, and the last day before your next period)</h4>
             <div class="dropdown">
@@ -109,7 +112,8 @@
         </div>
 
         <div id="Q4">
-            <h3><strong>Question 4</strong></h3>
+            <br>
+            <br>
             <h4>What day in your menstrual cycle are you on right now?
                 (The
                 first day of your period is considered day 1)</h4>
@@ -172,14 +176,10 @@
         <br>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
-                aria-hidden="true"></i>
-            Submit</button>
-
-        <hr>
-        <footer class="footer">
-
-        </footer>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" style="background: #e3f2fd;"
+            style="background-size: 100%">
+            <img src="./Assets/createnowbutton.png" width="265" height="75" alt="" />
+        </button>
 
     </div>
 
