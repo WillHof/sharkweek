@@ -19,6 +19,12 @@ module.exports = function (sequelize, DataTypes) {
         userType: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        code: {
+            type: DataTypes.INTEGER
+        },
+        sharedCode: {
+            type: DataTypes.INTEGER
         }
     });
 

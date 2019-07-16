@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
     $("#upToDate").hide();
@@ -59,12 +61,6 @@ $(document).ready(function () {
         $.post("/api/createAccountData", userDataObj)
     };
 
-
-
-
-
-
-
     logincheck()
     getHistory()
 
@@ -75,7 +71,9 @@ $(document).ready(function () {
         }
         $.post("/api/getUserData", email, function (data) {
             let lastItem = (data.length - 1)
-            $("#cLength").text(`${data[lastItem].currentAverage} days`)
+            let nextDay = new Date(`${data[lastItem].nextPredictedDateOne}`).toLocaleDateString('en-US')
+            $("#cLength").text(`${data[lastItem].currentAverage} days`);
+            $("#nextPDate").text(nextDay);
             localStorage.setItem("user", JSON.stringify(data))
         })
     }
@@ -101,7 +99,17 @@ $(document).ready(function () {
             window.location.replace(data);
         })
     })
-
+    $("#shareCode").on("click", event => {
+        event.preventDefault();
+        $("#codeShare").toggleClass("off")
+        let email = {
+            "email":
+                localStorage.getItem("email")
+        }
+        $.post("/api/getCode", email, data =>
+            $("#code").text(data)
+        );
+    })
     $("#logout").on("click", event => {
         localStorage.removeItem("email");
         window.location.href = "./"

@@ -60,7 +60,12 @@ module.exports = function (app) {
             })
         };
     });
-
+    app.post("/api/getCode", function (req, res) {
+        console.log(req.body)
+        db.User.findOne({
+            where: req.body
+        }).then(data => res.json(data.code))
+    })
     app.post("/api/createAccount", function (req, res) {
         // Create a new User with the data available to us in req.body
         db.User.create(req.body).then(function (dbUser) {
