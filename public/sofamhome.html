@@ -10,13 +10,13 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/style.css">
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md" style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="#">
-            <img src="./Assets/Shark fin.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Shark Week
+        <a class="navbar-brand" href="./sofamhome.html"> <img src="./Assets/logowide.png" width="220" height="75"
+                class="d-inline-block align-top" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,20 +25,23 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="./home.html">Home</a>
+                    <a class="nav-link" href="./sofamhome.html">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="./about.html">About <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="./purchase.html">Buy Stuff <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="./purchase.html">Period Products <span
+                            class="sr-only">(current)</span></a>
                 </li>
             </ul>
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" id="logout">Logout</button>
         </div>
     </nav>
 
     <div class="container">
-        <h2>SoFam Homepage</h2>
+        <br>
+        <h2><strong>SoFam Homepage</strong></h2>
         <hr>
         <div class="input-group mb-3">
             <input type="text" class="form-control" id="addCode" placeholder="Add Main User's code here"
@@ -56,7 +59,7 @@
             <h3 id="mainCycle"></h3>
         </h3>
         <!-- WILL, LETS TARGET THIS TO DISPLAY Associated User 1 USER'S AVERAGE CYCLE LENGTH FROM THE DB -->
-        <h3><strong>Next Cycle will occur around:</strong>
+        <h3><strong>Next Cycle Predicted to Occur Around:</strong>
             <h3 id="nextP"></h3>
         </h3>
 
