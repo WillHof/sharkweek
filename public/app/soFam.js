@@ -21,21 +21,31 @@ $(document).ready(function () {
             "email":
                 localStorage.getItem("email")
         }
+        //get my account info
         $.post("/api/getAccountInfo", email, function (data) {
             localStorage.setItem("user", JSON.stringify(data))
-        }).then(getHistory());
+        }).then(
+            //get my info from another table - joins weren't working due to foreign keys not functioning as expected
+            $.post("/api/getUserData", email, function (userData) {
+                localStorage.setItem("userData", JSON.stringify(userData))
+            })
+                //get main user history
+                .then(getHistory())
+        )
+
     }
     function getHistory() {
-        let user = JSON.parse(localStorage.getItem("user"))
+        let user = JSON.parse(localStorage.getItem("userData"))
         let sharedCode = user[0].sharedCode
-        console.log(sharedCode)
         let obj = {
             "sharedCode": sharedCode
         }
-        console.log(obj)
         $.post("/api/getMainUserData", obj, function (data) {
-            console.log(data)
             localStorage.setItem("MainUser", JSON.stringify(data))
+            let nextDay = new Date(`${data[0].nextPredictedDateOne}`).toLocaleDateString('en-US')
+            $("#mainName").text(data[0].email)
+            $("#mainCycle").text(data[0].currentAverage)
+            $("#nextP").text(nextDay)
         })
     }
     function writeMainData() {
