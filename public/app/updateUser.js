@@ -1,5 +1,4 @@
 
-
 $(document).ready(function () {
 
     $("#upToDate").hide();
@@ -34,29 +33,7 @@ $(document).ready(function () {
         $("#upToDate").show();
     });
 
-
-
-    // function determineUpdate(userUpdateObj) {
-    //     if (userUpdateObj.onP === "yes") {
-    //         console.log("yes tree")
-    //         userDataObj.email = ?????,
-    //             userDataObj.timeframe = +1 to previous entry in DB,
-    //                 userDataObj.currentAverage = calculate average here,
-    //                     userDataObj.currentDay = userUpdateObj.pday,
-    //                     userDataObj.actualDayOne = "the current times day, minus currentDay, converted to a date",
-    //                     userDataObj.nextPredictedDateOne = "actual day one + current average",
-    //                     upsertUserData()
-    //     }
-    //     else {
-    //         console.log("no updates necessary!")
-    //     }
-
-    // }
-
-
-
     // add update to Updates table
-
     function upsertUserData(userDataObj) {
         $.post("/api/createAccountData", userDataObj)
     };
