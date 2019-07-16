@@ -79,7 +79,6 @@ $(document).ready(function () {
         newUserObj1.lastName = $("#lastName").val().trim();
         newUserObj1.email = $("#email").val().trim();
         localStorage.setItem("email", newUserObj1.email);
-        newUserObj1.code = Math.floor(Math.random() * 10000)
         let nextDay1
         let actualDay1
         //Don't do anything if the name fields hasn't been filled out
@@ -100,7 +99,8 @@ $(document).ready(function () {
             currentAverage: userDataObj1.currentAverage,
             currentDay: userDataObj1.currentDay,
             nextPredictedDateOne: nextDay1,
-            actualDateOne: actualDay1
+            actualDateOne: actualDay1,
+            code: Math.floor(Math.random() * 10000)
         });
     }
 

@@ -41,10 +41,10 @@
         <h2>SoFam Homepage</h2>
         <hr>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Add Main User's code here" aria-label="newCode"
-                aria-describedby="addCode">
+            <input type="text" class="form-control" id="addCode" placeholder="Add Main User's code here"
+                aria-label="newCode" aria-describedby="addCodeButton">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="addCode">Add</button>
+                <button class="btn btn-outline-secondary" type="button" id="addCodeButton">Add</button>
             </div>
         </div>
         <h3><strong>Your Associated Users:</strong></h3>
@@ -53,16 +53,11 @@
         <h3><strong>Associated User 1: Average Cycle Length:</strong></h3>
         <!-- WILL, LETS TARGET THIS TO DISPLAY Associated User 1 USER'S AVERAGE CYCLE LENGTH FROM THE DB -->
 
-        <h3><strong>Associated User 2: Average Cycle Length:</strong></h3>
-        <!-- WILL, LETS TARGET THIS TO DISPLAY Associated User 2 USER'S AVERAGE CYCLE LENGTH FROM THE DB -->
-
-        <h3><strong>Associated User 3: Average Cycle Length:</strong></h3>
-        <!-- WILL, LETS TARGET THIS TO DISPLAY Associated User 3 USER'S AVERAGE CYCLE LENGTH FROM THE DB -->
-
-        <!-- etc etc etc.........., maybe dynamically create this? -->
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="./app/soFam.js"></script>
 </body>
 
 </html>
