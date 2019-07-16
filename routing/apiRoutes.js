@@ -5,10 +5,26 @@ const fs = require("fs");
 require("dotenv").config()
 const server = require("../server.js")
 const moment = require("moment")
+
 module.exports = function (app) {
+    app.post("/api/addCode", function (req, res) {
+        console.log(req.body)
+        let email = req.body.object[0];
+        let sharedCode = req.body.object[1].sharedCode;
+        console.log(email);
+        console.log(sharedCode)
+        db.Update.update(
+            {
+                "sharedCode": sharedCode
+            },
+            {
+                where:
+                    email
 
+            }).then(data => { res.json(data) })
+    })
+    //google Calendar auth
     app.post("/api/calendar", function (req, res) {
-
         authorize(server.oauth2Client, addEvent)
         //can resuse authorize function with other callbacks
         function authorize(credentials, callback) {
@@ -19,8 +35,6 @@ module.exports = function (app) {
                 callback(oAuthClient)
             });
         }
-
-
         function addEvent(auth) {
             const email = req.body;
             const calendar = google.calendar({ version: 'v3', auth });
@@ -60,30 +74,48 @@ module.exports = function (app) {
             })
         };
     });
+    //get mainUsers code to share
     app.post("/api/getCode", function (req, res) {
         console.log(req.body)
-        db.User.findOne({
+        db.Update.findOne({
             where: req.body
         }).then(data => res.json(data.code))
     })
+    //creates new user account
     app.post("/api/createAccount", function (req, res) {
         // Create a new User with the data available to us in req.body
         db.User.create(req.body).then(function (dbUser) {
             res.json(dbUser);
         });
     });
+    //creates new user data row
     app.post("/api/createAccountData", function (req, res) {
-        // Create a new User with the data available to us in req.body
         db.Update.create(req.body).then(function (dbUserData) {
             res.json(dbUserData);
         });
     });
+    //gets data for the logged in user
     app.post("/api/getUserData", function (req, res) {
         db.Update.findAll({
             where: {
                 email: req.body.email
             }
         }).then(dbUserData => res.json(dbUserData))
+    });
+    //Joins family user to main user
+    app.post("/api/getMainUserData", function (req, res) {
+        db.Update.findAll({
+            where: {
+                "code": req.body.sharedCode
+            }
+        }).then(dbUserData => res.json(dbUserData))
+    });
+    app.post("/api/getAccountInfo", function (req, res) {
+        db.User.findAll({
+            where: {
+                "email": req.body.email
+            }
+        }).then(function (dbUserData) { res.json(dbUserData) })
     });
     app.post("/api/updateAccountData", function (req, res) {
         db.Update.create(req.body).then(function (dbUserData) {

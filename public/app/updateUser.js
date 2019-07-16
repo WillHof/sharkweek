@@ -80,10 +80,10 @@ $(document).ready(function () {
 
     function logincheck() {
         if (!localStorage.getItem("email")) {
-            localStorage.setItem("email", "test@test.com")
+
             // !!!!Uncomment this out when we go live, are putting in TEST ACCOUNT INFO
-            // alert("You Are Not Logged In");
-            // window.location.href="./"
+            alert("You Are Not Logged In");
+            window.location.href = "./"
         }
     }
     function updateCurrentUser(data) {

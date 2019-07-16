@@ -35,6 +35,12 @@ module.exports = function (sequelize, DataTypes) {
         eventId: {
             type: DataTypes.STRING,
             allowNull: true
+        },
+        code: {
+            type: DataTypes.INTEGER
+        },
+        sharedCode: {
+            type: DataTypes.INTEGER
         }
 
     });
