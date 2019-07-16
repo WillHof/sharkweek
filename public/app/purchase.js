@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
     $("#logout").on("click", event => {
         localStorage.removeItem("email");
-        window.location.href = "./"
+        window.location.href = "/"
     })
 
 })

@@ -48,18 +48,15 @@ $(document).ready(function () {
             $("#nextP").text(nextDay)
         })
     }
-    function writeMainData() {
-
-    }
     function logincheck() {
         if (!localStorage.getItem("email")) {
             // !!!!Uncomment this out when we go live, are putting in TEST ACCOUNT INFO
             alert("You Are Not Logged In");
-            window.location.href = "./"
+            window.location.href = "/"
         }
     }
     $("#logout").on("click", event => {
         localStorage.removeItem("email");
-        window.location.href = "./"
+        window.location.href = "/"
     })
 })
